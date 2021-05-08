@@ -15,7 +15,44 @@ output: radix::radix_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Data was collected via Yandex.Toloka platform. 
+# Intro
+
+Data was collected via [One Click Survey](https://1ka.si) platform. Participants were recruited via [Yandex.Toloka](https://toloka.yandex.ru) platform. Dataset contains Trust in Artificial Intelligent Agents Scale (TAIA) items, General Trust Scale (GT) items, questions aimed at TAIA scale validation and demographic data.
+
+
+## Attributes description
+
+### TAIA
+
+Scale consists of six blocks. Each block contains 10--12 items.
+
+* Predictability: `pr01`--`pr10`
+* Consistency: `co01`--`co10`
+* Utility: `ut01`--`ut12`
+* Faith: `fa01`--`fa10`
+* Dependability: `de01`--`de11`
+* Understanding: `un01`--`un12`
+
+Reverse items are marked with `r` in its names.
+
+Sequence of blocks was randomly shuffled for each participant as well as items sequence inside each block.
+
+Questionnaire includes 15 auxiliary items `au01`--`au15` (2 or 3 per block) for controlling of questionnaire filling quality.
+
+
+
+### GT
+
+Questionnaire has one scale from six items `gt01`--`gt06`. Scale has no reverse items.
+
+
+### Questions aimed at scale validation
+
+
+
+
+
+
 
 
 
