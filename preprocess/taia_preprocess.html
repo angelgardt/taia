@@ -21,7 +21,7 @@
   <!--radix_placeholder_meta_tags-->
   <title>Trust in Artificial Intelligent Agents Scale</title>
   
-  <meta property="description" itemprop="description" content="Data preprocess workflow" />
+  <meta property="description" itemprop="description" content="First quantitative approbation. Data preprocess workflow" />
   
   
   <!--  https://schema.org/Article -->
@@ -32,19 +32,19 @@
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Trust in Artificial Intelligent Agents Scale" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="Data preprocess workflow" />
+  <meta property="og:description" content="First quantitative approbation. Data preprocess workflow" />
   <meta property="og:locale" content="en_US" />
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:title" content="Trust in Artificial Intelligent Agents Scale" />
-  <meta property="twitter:description" content="Data preprocess workflow" />
+  <meta property="twitter:description" content="First quantitative approbation. Data preprocess workflow" />
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Trust in Artificial Intelligent Agents Scale"]},{"type":"character","attributes":{},"value":["Data preprocess workflow\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Anton Angelgardt"]},{"type":"character","attributes":{},"value":["https://www.hse.ru/en/staff/angelgardt"]},{"type":"character","attributes":{},"value":["HSE University"]},{"type":"character","attributes":{},"value":["https://www.hse.ru/en/"]}]}]},{"type":"character","attributes":{},"value":["2021-05-08"]},{"type":"character","attributes":{},"value":["radix::radix_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Trust in Artificial Intelligent Agents Scale"]},{"type":"character","attributes":{},"value":["First quantitative approbation. Data preprocess workflow\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Anton Angelgardt"]},{"type":"character","attributes":{},"value":["https://www.hse.ru/en/staff/angelgardt"]},{"type":"character","attributes":{},"value":["HSE University"]},{"type":"character","attributes":{},"value":["https://www.hse.ru/en/"]}]}]},{"type":"character","attributes":{},"value":["2021-05-08"]},{"type":"character","attributes":{},"value":["radix::radix_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1938,7 +1938,7 @@ distill-header .nav a {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Trust in Artificial Intelligent Agents Scale","description":"Data preprocess workflow","authors":[{"author":"Anton Angelgardt","authorURL":"https://www.hse.ru/en/staff/angelgardt","affiliation":"HSE University","affiliationURL":"https://www.hse.ru/en/"}],"publishedDate":"2021-05-08T00:00:00.000+03:00","citationText":"Angelgardt, 2021"}
+{"title":"Trust in Artificial Intelligent Agents Scale","description":"First quantitative approbation. Data preprocess workflow","authors":[{"author":"Anton Angelgardt","authorURL":"https://www.hse.ru/en/staff/angelgardt","affiliation":"HSE University","affiliationURL":"https://www.hse.ru/en/"}],"publishedDate":"2021-05-08T00:00:00.000+03:00","citationText":"Angelgardt, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1949,7 +1949,7 @@ distill-header .nav a {
 
 <div class="d-title">
 <h1>Trust in Artificial Intelligent Agents Scale</h1>
-<p><p>Data preprocess workflow</p></p>
+<p><p>First quantitative approbation. Data preprocess workflow</p></p>
 </div>
 
 <div class="d-byline">
@@ -1963,7 +1963,7 @@ distill-header .nav a {
 <p>Data was collected via <a href="https://1ka.si">One Click Survey</a> platform. Participants were recruited via <a href="https://toloka.yandex.ru">Yandex.Toloka</a> platform. Dataset contains Trust in Artificial Intelligent Agents Scale (TAIA) items, General Trust Scale (GT) items, questions aimed at TAIA scale validation and demographic data.</p>
 <h2 id="attributes-description">Attributes description</h2>
 <h3 id="taia">TAIA</h3>
-<p>Questionnaire consist of six blocks. Each block contains 10–12 items.</p>
+<p>Scale consists of six blocks. Each block contains 10–12 items.</p>
 <ul>
 <li>Predictability: <code>pr01</code>–<code>pr10</code></li>
 <li>Consistency: <code>co01</code>–<code>co10</code></li>
@@ -1972,6 +1972,5217 @@ distill-header .nav a {
 <li>Dependability: <code>de01</code>–<code>de11</code></li>
 <li>Understanding: <code>un01</code>–<code>un12</code></li>
 </ul>
+<p>Scores range from <code>0</code> to <code>5</code>. Reverse items are marked with <code>r</code> in its names.</p>
+<p>Stems are <a href="https://raw.githubusercontent.com/angelgardt/taia/master/preprocess/taia_items_1.txt">here</a>.</p>
+<p>Sequence of blocks was randomly shuffled for each participant as well as items sequence inside each block.</p>
+<p>Questionnaire includes 15 auxiliary items <code>au01</code>–<code>au15</code> (2 or 3 per block) for controlling of questionnaire filling quality.</p>
+<h3 id="gt">GT</h3>
+<p>Questionnaire has one scale from six items <code>gt01</code>–<code>gt06</code>. Scores range from <code>0</code> to <code>4</code>. Scale has no reverse items.</p>
+<p>Stems are <a href="https://github.com/angelgardt/taia/raw/master/preprocess/gt_items.txt">here</a>.</p>
+<h3 id="questions-aimed-at-scale-validation">Questions aimed at scale validation</h3>
+<p>Participants were asked to report their experience of dealing with AI technologies.</p>
+<ul>
+<li><code>socnet</code> — Does participant have an social network or social media accounts? (<code>1</code> for ‘yes‘, <code>0</code> for ‘no’)
+<ul>
+<li>if the answer is ‘no’, subject moves directly to <code>dighelp</code></li>
+</ul></li>
+<li>social networks and social media accounts that participant have
+<ul>
+<li><code>vk</code> for VKontakte</li>
+<li><code>fb</code> for Facebook</li>
+<li><code>tw</code> for Twitter</li>
+<li><code>in</code> for Instagram</li>
+<li><code>tt</code> for TikTok</li>
+<li><code>yt</code> for YouTube</li>
+</ul></li>
+<li><code>freqvk</code>, <code>freqfb</code>, <code>freqtw</code>, <code>freqin</code>, <code>freqtt</code>, <code>freqyt</code> — social media usage frequency (<code>0</code>–<code>3</code>)</li>
+<li><code>expvk</code>, <code>expfb</code>, <code>exptw</code>, <code>expin</code>, <code>exptt</code>, <code>expyt</code> — a level of satisfying with social media recommender system (<code>0</code>–<code>5</code>)</li>
+<li><code>dighelp</code> — Does participant use any digital assistants? (<code>1</code> for ‘yes‘, <code>0</code> for ‘no’)
+<ul>
+<li>if the answer is ‘no’, subject moves directly to <code>selfdrcar</code></li>
+</ul></li>
+<li>digital assistants that participant use
+<ul>
+<li><code>siri</code> for Siri (Apple)</li>
+<li><code>alice</code> for Alice (Yandex)</li>
+<li><code>salut</code> for Salut (Sberbank)</li>
+<li><code>oleg</code> for Oleg (Tinkoff Bank)</li>
+<li><code>alex</code> for Alexandra (Moscow Metro)</li>
+<li><code>mia</code> for Mia (Tele 2 mobile provider)</li>
+<li><code>mts</code> for MTS AI (MTS mobile provider)</li>
+<li><code>ggle</code> for Google Assistant</li>
+<li><code>oth</code> for ‘Other’ option</li>
+</ul></li>
+<li><code>expsiri</code>, <code>expalice</code>, <code>expsalut</code>, <code>expoleg</code>, <code>expalex</code>, <code>expmia</code>, <code>expmts</code>, <code>expggle</code>, <code>expoth</code> — How it was an interaction experience with these digital assistants? (<code>0</code>–<code>5</code>)</li>
+<li><code>selfdrcar</code> — Does participant have an experience of driving a self-driving car? (<code>1</code> for ‘yes‘, <code>0</code> for ‘no’)
+<ul>
+<li>if the answer is ‘no’, subject moves directly to <code>eduai</code></li>
+</ul></li>
+<li><code>selfdrexp</code> — How it was an experience of driving a self-driving car? (<code>0</code>–<code>5</code>)</li>
+<li><code>selfdrsafe</code> — Did participant feel safe while driving a self-driving car? (<code>0</code>–<code>5</code>)</li>
+<li><code>eduai</code> — Does participant face with AI technologies in education? (<code>1</code> for ‘yes‘, <code>0</code> for ‘no’)
+<ul>
+<li>if the answer is ‘no’, subject moves directly to demographic part</li>
+</ul></li>
+<li><code>eduaiexp</code> — How it was an experience of dealing with AI for education? (<code>0</code>–<code>5</code>)</li>
+</ul>
+<h3 id="demographic-info">Demographic info</h3>
+<ul>
+<li><code>age</code> — participants’ age</li>
+<li><code>sex</code> — participants’ gender
+<ul>
+<li><code>m</code> for ‘masculine’, <code>f</code> for ‘feminine’, <code>a</code> for ‘other’</li>
+</ul></li>
+<li><code>edulvl1</code> — a highest level of [first] education
+<ul>
+<li><code>school</code> / <code>college</code> / <code>bachelor</code> / <code>srecialist</code> / <code>master</code> / <code>postgrad</code></li>
+</ul></li>
+<li><code>spec1</code> — [first] education specialization</li>
+<li><code>edu2</code> — Does participant have another education with different specialization? (<code>1</code> for ‘yes‘, <code>0</code> for ‘no’)
+<ul>
+<li>if the answer is ‘no’, subject moves directly to <code>jobfield</code></li>
+</ul></li>
+<li><code>edulvl2</code> — a highest level of second education
+<ul>
+<li><code>school</code> / <code>college</code> / <code>bachelor</code> / <code>srecialist</code> / <code>master</code> / <code>postgrad</code></li>
+</ul></li>
+<li><code>spec2</code> — second education specialization</li>
+<li><code>jobfield</code> — field of current job</li>
+<li><code>joppos</code> — job position</li>
+<li><code>city</code> — current city of residence</li>
+</ul>
+<h2 id="data-preparation">Data preparation</h2>
+<p>Before preprocessing <code>id</code> column with unique string for each observation was add. Also extra characters added by One Click Survey platform were removed while personal data was separated from questionnaire data.</p>
+<h1 id="preprocessing">Preprocessing</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="add-packages">Add packages</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+library(tidyverse)
+library(knitr)</code></pre>
+</div>
+<h2 id="import-data">Import data</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+raw &lt;- read_csv(&#39;https://github.com/angelgardt/taia/raw/master/data/questionnaire_data.csv&#39;)
+str(raw)</code></pre>
+<pre><code>
+tibble [513 × 142] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ pr01       : num [1:513] 4 3 3 3 3 3 0 1 2 5 ...
+ $ pr02       : num [1:513] 4 3 3 3 2 3 0 2 1 5 ...
+ $ pr03r      : num [1:513] 1 2 3 3 3 3 3 1 1 5 ...
+ $ pr04r      : num [1:513] 0 2 3 3 2 5 5 2 2 5 ...
+ $ pr05       : num [1:513] 2 2 3 3 2 3 0 1 1 5 ...
+ $ pr06       : num [1:513] 3 3 3 3 4 3 3 2 2 5 ...
+ $ pr07       : num [1:513] 3 2 3 3 4 3 0 1 3 4 ...
+ $ pr08       : num [1:513] 4 2 3 3 3 2 0 2 3 5 ...
+ $ pr09       : num [1:513] 4 2 3 3 3 2 1 2 2 5 ...
+ $ pr10       : num [1:513] 4 4 3 3 3 3 1 2 2 5 ...
+ $ au01       : num [1:513] 0 0 0 3 0 2 0 0 0 0 ...
+ $ au02       : num [1:513] 4 5 4 3 4 2 4 4 4 4 ...
+ $ co01       : num [1:513] 4 2 3 3 3 2 1 1 3 5 ...
+ $ co02       : num [1:513] 4 2 3 3 3 2 0 2 2 4 ...
+ $ co03       : num [1:513] 3 2 3 3 2 2 0 1 1 5 ...
+ $ co04       : num [1:513] 4 5 3 3 4 2 3 1 1 1 ...
+ $ co05       : num [1:513] 4 2 3 3 2 1 1 2 2 5 ...
+ $ co06       : num [1:513] 3 2 3 3 3 1 0 2 1 1 ...
+ $ co07r      : num [1:513] 5 3 3 3 2 2 3 2 2 5 ...
+ $ co08       : num [1:513] 1 1 3 3 3 1 2 2 3 5 ...
+ $ co09       : num [1:513] 1 2 3 3 3 1 0 2 1 5 ...
+ $ co10       : num [1:513] 3 4 3 3 3 2 0 1 2 5 ...
+ $ au03       : num [1:513] 3 3 3 3 3 2 3 3 3 3 ...
+ $ au04       : num [1:513] 1 0 1 3 1 2 1 1 1 1 ...
+ $ au05       : num [1:513] 2 2 2 4 2 1 2 2 2 2 ...
+ $ ut01       : num [1:513] 4 4 3 4 2 2 5 3 1 4 ...
+ $ ut02       : num [1:513] 4 3 3 3 2 3 4 2 2 3 ...
+ $ ut03r      : num [1:513] 1 0 2 3 3 3 1 2 2 5 ...
+ $ ut04       : num [1:513] 4 3 3 3 4 4 4 1 2 3 ...
+ $ ut05       : num [1:513] 1 3 3 4 2 2 3 2 1 5 ...
+ $ ut06       : num [1:513] 3 4 3 3 4 3 3 2 1 3 ...
+ $ ut07       : num [1:513] 4 3 3 4 2 2 2 1 2 5 ...
+ $ ut08       : num [1:513] 5 2 3 4 2 3 2 1 1 5 ...
+ $ ut09       : num [1:513] 2 2 3 3 2 3 1 2 1 2 ...
+ $ ut10r      : num [1:513] 3 2 3 4 3 3 3 2 2 2 ...
+ $ ut11       : num [1:513] 3 2 3 4 3 4 1 1 3 3 ...
+ $ ut12       : num [1:513] 3 3 3 3 3 3 1 3 3 4 ...
+ $ au06       : num [1:513] 5 5 5 3 5 3 5 5 5 5 ...
+ $ au07       : num [1:513] 3 3 3 3 3 3 3 3 3 3 ...
+ $ fa01       : num [1:513] 4 2 3 3 2 3 0 1 2 5 ...
+ $ fa02r      : num [1:513] 1 3 3 3 4 2 5 1 3 3 ...
+ $ fa03       : num [1:513] 1 2 2 3 2 2 0 1 1 2 ...
+ $ fa04       : num [1:513] 0 2 3 3 2 3 0 2 1 1 ...
+ $ fa05       : num [1:513] 4 2 3 3 3 2 0 2 2 1 ...
+ $ fa06       : num [1:513] 4 3 3 3 3 2 0 1 2 4 ...
+ $ fa07r      : num [1:513] 1 4 2 3 3 3 4 2 2 4 ...
+ $ fa08r      : num [1:513] 1 2 3 3 3 2 5 3 2 4 ...
+ $ fa09r      : num [1:513] 1 3 3 3 3 2 5 3 1 3 ...
+ $ fa10       : num [1:513] 4 4 3 3 2 3 0 2 1 3 ...
+ $ au08       : num [1:513] 1 1 1 3 1 2 1 1 1 1 ...
+ $ au09       : num [1:513] 5 5 5 3 5 3 5 5 5 5 ...
+ $ au10       : num [1:513] 3 3 3 3 3 2 3 3 3 3 ...
+ $ de01       : num [1:513] 4 1 3 3 3 2 0 2 3 5 ...
+ $ de02       : num [1:513] 1 3 3 3 2 2 0 3 1 5 ...
+ $ de03       : num [1:513] 3 2 3 3 3 3 0 4 2 0 ...
+ $ de04r      : num [1:513] 4 4 3 4 2 2 0 3 2 5 ...
+ $ de05       : num [1:513] 4 4 3 3 4 1 0 4 3 5 ...
+ $ de06       : num [1:513] 4 2 3 3 3 1 0 2 2 5 ...
+ $ de07       : num [1:513] 3 3 3 4 2 2 2 2 2 5 ...
+ $ de08       : num [1:513] 4 2 3 3 1 2 1 1 2 4 ...
+ $ de09r      : num [1:513] 1 1 2 3 1 2 5 1 3 0 ...
+ $ de10       : num [1:513] 3 1 3 3 3 0 0 3 2 5 ...
+ $ de11r      : num [1:513] 1 2 3 4 4 1 5 1 1 2 ...
+ $ au11       : num [1:513] 5 5 5 4 5 1 5 5 5 5 ...
+ $ au12       : num [1:513] 0 0 0 3 0 1 0 0 0 0 ...
+ $ un01       : num [1:513] 4 3 2 4 3 2 3 1 1 4 ...
+ $ un02       : num [1:513] 3 2 2 4 3 3 4 1 3 3 ...
+ $ un03       : num [1:513] 1 1 2 3 4 4 3 1 1 2 ...
+ $ un04       : num [1:513] 1 3 2 4 3 2 4 2 2 5 ...
+ $ un05       : num [1:513] 3 4 2 3 5 3 3 1 2 3 ...
+ $ un06r      : num [1:513] 5 3 3 4 4 2 2 2 1 3 ...
+ $ un07       : num [1:513] 2 4 2 3 3 3 3 1 3 5 ...
+ $ un08       : num [1:513] 4 4 2 3 3 3 0 1 2 5 ...
+ $ un09       : num [1:513] 1 2 2 3 3 3 0 2 2 3 ...
+ $ un10       : num [1:513] 2 1 2 4 2 3 4 1 2 2 ...
+ $ un11       : num [1:513] 3 2 4 3 2 2 1 2 2 5 ...
+ $ un12       : num [1:513] 4 4 2 4 2 2 3 2 1 5 ...
+ $ au13       : num [1:513] 1 1 1 3 3 3 1 1 1 1 ...
+ $ au14       : num [1:513] 4 4 4 3 4 2 4 4 4 4 ...
+ $ au15       : num [1:513] 2 2 2 3 2 3 2 2 2 2 ...
+ $ gt01       : num [1:513] 3 3 2 2 3 0 3 2 1 4 ...
+ $ gt02       : num [1:513] 3 2 2 2 2 1 3 2 2 4 ...
+ $ gt03       : num [1:513] 3 1 2 3 2 1 3 2 3 3 ...
+ $ gt04       : num [1:513] 3 3 2 3 3 1 3 2 1 3 ...
+ $ gt05       : num [1:513] 3 3 1 3 3 1 1 2 3 3 ...
+ $ gt06       : num [1:513] 3 3 2 3 2 1 3 2 2 4 ...
+ $ socnet     : num [1:513] 1 1 1 1 1 1 1 1 1 1 ...
+ $ vk         : num [1:513] 1 1 1 1 1 1 1 1 1 0 ...
+ $ fb         : num [1:513] 0 1 1 0 1 1 0 0 0 1 ...
+ $ tw         : num [1:513] 1 1 0 0 0 1 1 0 0 0 ...
+ $ in         : num [1:513] 1 1 1 0 0 1 0 1 0 0 ...
+ $ tt         : num [1:513] 0 1 0 0 0 1 0 1 0 1 ...
+ $ yt         : num [1:513] 1 0 1 0 0 1 1 0 1 0 ...
+ $ freqvk     : num [1:513] 3 3 3 1 3 3 2 3 3 -2 ...
+ $ freqfb     : num [1:513] -2 0 3 -2 0 3 -2 -2 -2 1 ...
+ $ freqtw     : num [1:513] 3 3 -2 -2 -2 3 3 -2 -2 -2 ...
+ $ freqin     : num [1:513] 3 3 3 -2 -2 3 -2 3 -2 -2 ...
+ $ freqtt     : num [1:513] -2 2 -2 -2 -2 3 -2 3 -2 2 ...
+ $ freqyt     : num [1:513] 0 -2 3 -2 -2 3 3 -2 3 -2 ...
+  [list output truncated]
+ - attr(*, &quot;spec&quot;)=
+  .. cols(
+  ..   pr01 = col_double(),
+  ..   pr02 = col_double(),
+  ..   pr03r = col_double(),
+  ..   pr04r = col_double(),
+  ..   pr05 = col_double(),
+  ..   pr06 = col_double(),
+  ..   pr07 = col_double(),
+  ..   pr08 = col_double(),
+  ..   pr09 = col_double(),
+  ..   pr10 = col_double(),
+  ..   au01 = col_double(),
+  ..   au02 = col_double(),
+  ..   co01 = col_double(),
+  ..   co02 = col_double(),
+  ..   co03 = col_double(),
+  ..   co04 = col_double(),
+  ..   co05 = col_double(),
+  ..   co06 = col_double(),
+  ..   co07r = col_double(),
+  ..   co08 = col_double(),
+  ..   co09 = col_double(),
+  ..   co10 = col_double(),
+  ..   au03 = col_double(),
+  ..   au04 = col_double(),
+  ..   au05 = col_double(),
+  ..   ut01 = col_double(),
+  ..   ut02 = col_double(),
+  ..   ut03r = col_double(),
+  ..   ut04 = col_double(),
+  ..   ut05 = col_double(),
+  ..   ut06 = col_double(),
+  ..   ut07 = col_double(),
+  ..   ut08 = col_double(),
+  ..   ut09 = col_double(),
+  ..   ut10r = col_double(),
+  ..   ut11 = col_double(),
+  ..   ut12 = col_double(),
+  ..   au06 = col_double(),
+  ..   au07 = col_double(),
+  ..   fa01 = col_double(),
+  ..   fa02r = col_double(),
+  ..   fa03 = col_double(),
+  ..   fa04 = col_double(),
+  ..   fa05 = col_double(),
+  ..   fa06 = col_double(),
+  ..   fa07r = col_double(),
+  ..   fa08r = col_double(),
+  ..   fa09r = col_double(),
+  ..   fa10 = col_double(),
+  ..   au08 = col_double(),
+  ..   au09 = col_double(),
+  ..   au10 = col_double(),
+  ..   de01 = col_double(),
+  ..   de02 = col_double(),
+  ..   de03 = col_double(),
+  ..   de04r = col_double(),
+  ..   de05 = col_double(),
+  ..   de06 = col_double(),
+  ..   de07 = col_double(),
+  ..   de08 = col_double(),
+  ..   de09r = col_double(),
+  ..   de10 = col_double(),
+  ..   de11r = col_double(),
+  ..   au11 = col_double(),
+  ..   au12 = col_double(),
+  ..   un01 = col_double(),
+  ..   un02 = col_double(),
+  ..   un03 = col_double(),
+  ..   un04 = col_double(),
+  ..   un05 = col_double(),
+  ..   un06r = col_double(),
+  ..   un07 = col_double(),
+  ..   un08 = col_double(),
+  ..   un09 = col_double(),
+  ..   un10 = col_double(),
+  ..   un11 = col_double(),
+  ..   un12 = col_double(),
+  ..   au13 = col_double(),
+  ..   au14 = col_double(),
+  ..   au15 = col_double(),
+  ..   gt01 = col_double(),
+  ..   gt02 = col_double(),
+  ..   gt03 = col_double(),
+  ..   gt04 = col_double(),
+  ..   gt05 = col_double(),
+  ..   gt06 = col_double(),
+  ..   socnet = col_double(),
+  ..   vk = col_double(),
+  ..   fb = col_double(),
+  ..   tw = col_double(),
+  ..   `in` = col_double(),
+  ..   tt = col_double(),
+  ..   yt = col_double(),
+  ..   freqvk = col_double(),
+  ..   freqfb = col_double(),
+  ..   freqtw = col_double(),
+  ..   freqin = col_double(),
+  ..   freqtt = col_double(),
+  ..   freqyt = col_double(),
+  ..   expvk = col_double(),
+  ..   expfb = col_double(),
+  ..   exptw = col_double(),
+  ..   expin = col_double(),
+  ..   exptt = col_double(),
+  ..   expyt = col_double(),
+  ..   dighelp = col_double(),
+  ..   siri = col_double(),
+  ..   alice = col_double(),
+  ..   salut = col_double(),
+  ..   oleg = col_double(),
+  ..   alex = col_double(),
+  ..   mia = col_double(),
+  ..   mts = col_double(),
+  ..   ggle = col_double(),
+  ..   oth = col_double(),
+  ..   oth_text = col_character(),
+  ..   expsiri = col_double(),
+  ..   expalice = col_double(),
+  ..   expsalut = col_double(),
+  ..   expoleg = col_double(),
+  ..   expalex = col_double(),
+  ..   expmia = col_double(),
+  ..   expmts = col_double(),
+  ..   expggle = col_double(),
+  ..   expoth = col_double(),
+  ..   expoth_text = col_character(),
+  ..   selfdrcar = col_double(),
+  ..   selfdrexp = col_double(),
+  ..   selfdrsafe = col_double(),
+  ..   eduai = col_double(),
+  ..   eduaiexp = col_double(),
+  ..   age = col_double(),
+  ..   sex = col_character(),
+  ..   edulvl1 = col_character(),
+  ..   spec1 = col_character(),
+  ..   edu2 = col_double(),
+  ..   edulvl2 = col_character(),
+  ..   spec2 = col_character(),
+  ..   jobfield = col_character(),
+  ..   jobpos = col_character(),
+  ..   city = col_character(),
+  ..   id = col_character()
+  .. )</code></pre>
+</div>
+<h2 id="check-quality-with-control-items">Check quality with control items</h2>
+<p>Import keys for auxiliary items:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+aux_items &lt;- read_csv2(&#39;https://github.com/angelgardt/taia/raw/master/data/aux_items.csv&#39;)
+str(aux_items)</code></pre>
+<pre><code>
+tibble [15 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ code           : chr [1:15] &quot;au01&quot; &quot;au02&quot; &quot;au03&quot; &quot;au04&quot; ...
+ $ Auxillary_items: chr [1:15] &quot;В данном пункте, отметьте, пожалуйста, вариант ответа «абсолютно не согласен»&quot; &quot;«Согласен» — это тот вариант ответа, который необходимо указать в данном пункте&quot; &quot;Укажите, пожалуйста, вариант «скорее согласен» в качестве ответа на данное утверждение&quot; &quot;В данном пункте, отметьте, пожалуйста, вариант ответа «не согласен»&quot; ...
+ $ key            : num [1:15] 0 4 3 1 2 5 3 1 5 3 ...
+ - attr(*, &quot;spec&quot;)=
+  .. cols(
+  ..   code = col_character(),
+  ..   Auxillary_items = col_character(),
+  ..   key = col_double()
+  .. )</code></pre>
+</div>
+<p>Select <code>au</code> columns from questionnaire data, merge with keys and calculate differences between score and key. Then calculate basic statistics for differences and assess quality for each participant.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+raw %&gt;% select(id, all_of(aux_items$code)) %&gt;% 
+  pivot_longer(cols = aux_items$code,
+               names_to = &#39;code&#39;,
+               values_to = &#39;score&#39;) %&gt;% 
+  full_join(aux_items %&gt;% 
+              select(code, key)) %&gt;% 
+  mutate(dif = abs(score - key)) %&gt;% 
+  group_by(id) %&gt;% 
+  summarise(n_miss = sum(dif != 0),
+            p_miss = n_miss / 15,
+            min = min(dif),
+            max = max(dif)) -&gt; taia_quality</code></pre>
+</div>
+<p>Quality of filling TAIA questionnaire assess based on control items:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+colnames(taia_quality) &lt;- c(&quot;ID&quot;, &quot;Number of misses&quot;, &quot;Proportion of misses&quot;, &quot;Minimum miss&quot;, &quot;Maximum miss&quot;)
+kable(taia_quality)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">Number of misses</th>
+<th style="text-align: right;">Proportion of misses</th>
+<th style="text-align: right;">Minimum miss</th>
+<th style="text-align: right;">Maximum miss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">00XzIUUVmQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0aABrq9MBY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0c6myGTrKr</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0CS5iaAVos</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0hrSDnMpUk</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0iqSSzBl6e</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0maEmGpULZ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0tQInW4G3B</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0uZliSVPMZ</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">17jWtPKrPr</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17XN2GOE6F</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1anEmI3vYK</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1d7CXSliMB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1fgBHEHq6T</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1K9AZYhfrl</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1Kr3AOODZh</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1RDSEuWBwm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1RFZ3YYyia</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1WjZ4KUvYG</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1zVgfYnwfn</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">27sMU3wN3O</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">292nP1CpGq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2C5vqAxJUd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2F5efYz8hr</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2kqeEL9CHv</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2quJKHNAKL</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3iQ7cjWIm6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3ks3QZaPmx</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3N1zjFzb82</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3PBVRnDHHV</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3uVnF8WPVZ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3WSvl9SrqG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">42YX9G92Qr</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4f9W10V6rs</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4FNyYiB2m7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4OOH0veBaG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4PS3dGM6uP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4qqUrRUpeN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4twihgKt66</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4UTTkH0nJu</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">52ias4Hp6G</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.3333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">57iNTSlTke</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5aN9ZjtkbN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5Be3ukVGKy</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5c3yFSkAy8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5cKoJg26PJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5cUyEml8aC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5DxhOpTkau</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5Gp1ImpHd9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5LKHNYGhXh</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5m4M2XIyjJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5n0UsXGvA3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5svwlAueuh</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">62v4TBSJgK</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6A9a5ry2Qg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6bZyQh4wwS</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6CR0JBmqPm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6FW07m2tQ1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6ILe2qG7co</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6PE8whHsh2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6x73x6A7PB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6Xy3M9PQhf</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">75akBZ2cCk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7C64sA56mR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7DI6uVykBg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7eOT5lZQEB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7f2oQb1aUo</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7GgkewMfFt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7HhfKTqNrj</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7j3AIaEFRm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7LHU43cOcV</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7td08uSsjV</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7UIn26fTXL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7vt1HW09Ls</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">84DjHfSbZ8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8GZ2r4wnDi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8jPrxjJBbG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8mQ67yVVHV</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8zGxt9GFrV</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">93gAEKkygE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">97CkjDc1VC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9JMVlzTjPj</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9mhyQBSpBH</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9mPIK2zsgc</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9PxMVEgIgX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9qAfBaDbG6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9qnKRL8wzM</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9sPzp5mtke</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.3333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9TJEgvJPsi</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">a0ZkD0fyb2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">a3DFQSxlbN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A5ZbSiQdF2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ANYQgWhzlF</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.6000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arf8pib9J0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">aRFd1CjJx3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arkqxLwMN0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arL4OuyxJk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AvgzFU3p3P</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">aVnbIJrQtt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">aVwSrNhrwQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">aWvqgjh3dY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AWxfhpLg8i</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ax8ccn5nns</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">aYnNkRNNAq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">b108114pAC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b1hVn9hrWJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">b6ilR4UDwu</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B6K2ad0WQk</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bAiiRIiaqY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bBq5RPgHtb</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">beV6gEaPiL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bFwa1RFcp7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BgLmwiiaLD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BgnswFV8sQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">biaRkwRoCl</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">biDh5hEcDD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BIEn5vnIsc</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BKKAeKX6i4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">boXH8yMofA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BRfezgCZyn</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bte8e7Z6NJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BUQCbt5bGo</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bWlnaTjiC1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ByQbgttny5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C1hCP6GdAi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">c6jGks9jiT</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CBUAHmfxT7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CCLLXZmKFX</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cDPkYVL8XK</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cEhpXuWrOm</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CmgiNuQfyp</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cnz4M0NWTH</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cSzTg5LENR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ctActo4w67</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cugy9zkPlK</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CxRA9dbSiK</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D2SJXznsSG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D49TrgdvWD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D7GV7o71AX</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D8oTo54hC9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dBtvDRJJYT</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DchEVHY7pA</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ddBupPLSv2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DIxxqD2G2n</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">djOWqnY5tw</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dmMiu2KO7e</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dWW5OFeDvC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dyTvYdCDJ8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dyWCwP0cR4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DYymbGUKy4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dz8Be0cKg9</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E1JG5cwnGL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E2ms2EqAFX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EckZFtOsNt</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EdCzjyLprn</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">edfP6uPquS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EeNnBIJDlo</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.2666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EfDb76QSWJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EhekF0aOMg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">El5WhPcmov</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EnW2W5CbGV</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eOUVf60lrb</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eoZXILVYyf</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EQHaqVFpyk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Er2eYMpCxb</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">es0gEtNvzp</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESu2rLYlXB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eZQ7yJZtqb</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EZvcwPOLkM</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">f8uMo1yIFt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F8vTCgryz1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fdZFbzEDK7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FEDIGMfb4g</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FfZfBmkvjQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fH8DVJctox</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fJJiOooosa</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flSqnz4c6n</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fmdof1u9vP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">foBYE8ZZmi</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FsFEB1Pv0s</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ftPlOciWWJ</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fV4N2zC4mR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FzAakmSJXY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fZtGHrlnRg</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G1FGjQ3RgQ</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">g3R5aiT3sz</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G70zNZZCwQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G9UygPe2hT</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GA7MRqIKsH</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GAyJnq0f19</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GAYofWzaql</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GbVZHHgTMU</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gE9hPWgAs7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GG8EUisetL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gGRvjlES0A</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gHRNg65f44</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gLotlhxoAG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GlzbQxzV8E</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gmTIVFdAeV</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gnuwykPiGA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gS3t89rW4v</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gsj3igkga6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GuO0GwvmJN</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gVHUxt5y74</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gvYbtDzrAX</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GxuhLRJcZG</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gYGut8i9gw</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GYlJuh1QLU</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">H4r1N0pVZB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">H8ydzn5vQy</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HcGwdcceyL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hKjljHLfKv</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hm7LqxLE62</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HNGwMYA8Oa</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hsfuvPceeG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HsQn15YtL9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HUgv0Y3ft4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hVeNXgEvrd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hXEkbOdr6x</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HyZPG1Cebo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I06tmkjCnR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I0TgLgpqpa</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">i3aMRfQOSq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I3hzGdW8WD</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">i5sfKKHxWN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I5sSLM22Gh</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">i6hZdEUejG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">iAXONy9s9K</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ibxYh4K1oX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">iEtOLmjjbt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iHlmoCrWBY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IiNRdjqv9k</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ilLlMRc43e</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IOsyPugvv6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iOup0E6UGE</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ipnDbcE7u4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">irP2VFAUU3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IU57hQRjrY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iUH69L5w4c</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IvcOmQyR5T</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IYAYWHNIQO</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">j6vgNGJVvh</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JamvFbuBYK</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jAuLn1O1jG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JAznPlTozq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JcdQHv1boB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JCGnLqMlIW</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jfKg03gcAX</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JkfI2EJjp6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jkRY3xRFcN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jmb6ptouY7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JpE0xvWX5S</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">jsb9VeKQdr</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jUU2NaFI9k</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JVebCg3jvw</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jXGRpKtYN0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JXlKLx5eSi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jypdgBacyD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">k86FUDuJ1f</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kbhIFRe0V7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kI498bAOJr</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.4000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KiTwcbdmOq</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kKgE6R5eLb</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">koFGsWn4c9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">KOkyAkWDNb</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kpc9oqB65a</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">KWqfhZxBVq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kzKJAOfIpd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">L1tcDFuujd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">l7G4Q4xS8V</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">l7PZKhiE3A</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">L8GKeOgD9j</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lbJqaPGrsh</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lC7NjgZhPE</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lG2U0lzjgg</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LjlQ4d77MU</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">llsuSrE1a9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LLtBwgD8i4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lmJQICoStk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LMKnnA9PDE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lq1BncsQHb</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LqvNDnJsII</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">luMqgVYh7U</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">m239u1EYWS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MGfL1HbPXm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MJWkid756C</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mL9vGWF9OH</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mLYQyZtbMD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MMghVvwLxv</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mMvLVvgjht</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MngwEZhwjX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mos9HG84GW</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mSkU22T9Di</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MtESQu4nk5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mTLRvEfmIq</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mvh72P0Vu7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MW6PUiAOVr</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">N3muyGl3ry</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N9w8ybGtrx</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nahQ4nLJ72</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NdxlJQSX6V</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ngRp7Q06pB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nGsBX9YOAM</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nhRnpc2Poy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NKMES8pCyi</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NMYlrLUEZ1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nNCmili2x1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nnLZv3c0RC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nqida8kDsb</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nsf7SZQiKn</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ntIarc7F8T</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NtmrPyf6Rj</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NXV8LYthfP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nZ5b34k2BP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">O0MyEBNc56</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">o5RKs3mdpU</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">O5WxWHRFOy</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">oAt4Wh6uC8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ODGVYkHeZs</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ofyqe53y4A</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OhKU30XCaG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OjQQtcK5Bl</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">oLp0C6375F</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ONkg2bUC9V</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">op3H2zRrG1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">osMD9biQDC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">osqQVLURO8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTgHG3A20R</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OUgnPYlwLz</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OWwLUhx97m</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">oyRYIh2w3C</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1qSqSVgh6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1xXgkh0YS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p2aHDlGHY3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">p2pM8bQTtq</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p6kinCGYar</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P9Ayn8Uhrm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pbEi4w1Tdk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PcsDFzRVUI</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pmlugbL9py</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PNcNdedT1h</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">prkNbsJS99</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pRPqAwQVda</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PTIPJMjK9l</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pTqS3P95Fs</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PuyBWPPz4e</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pvFLsHHnMg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pVxySUo9bS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PWkORrgrGd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PwXEJApBeD</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pxLjdokyLN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PYzFlBQZhx</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pzKDfF8UQ4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q2yzpMjRow</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">q5NrRpZbQp</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q6k63D7zEf</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QAa2Zsf0Wr</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">qaadFh2Itq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QB5HNqHPKv</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Qk6YaIs2s2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QkFREk3u9V</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">qkzc2A8zxi</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Qnpq1v1vmw</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QOT10tHumC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QPFanCUuVX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Qq9GR6HNZF</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">qQbFGSxK4R</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QrIz4kmzBO</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QsnjBwJun6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">qVmGCjFgoW</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">qx2z1czIyP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QxKxlY255X</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QYtUrXkiPp</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QZ9nRSroKQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">r2Qc9jbrW7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">r4zlFEVJOo</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R500qbuwsc</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R6KgZz9Cno</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.2666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R9C3loTdjY</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">r9YNERa371</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RA5bBnFe4N</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RaamhhMqF7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RgbS5SeYOk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rJuOLLAnEp</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rNrNriDJrJ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rnVlZTIPxR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RnwhJLEcxk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ron5wtZETU</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rptyTtS8Vb</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RSYTt2xWz8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RuqfncD5cw</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RWZx4iLyhN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">s1sAV1JqQ2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SbM6fcsHP9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sHlsaC5oln</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sJfxVBsVqx</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sl2sv2Gqeh</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SoNzzbPiZg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPYipkoPoE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SuFb5T8A30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">T1VpcghRSg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">t3fREejxx8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">t3XqeUW6wA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TAksqmqAHA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tc4NliJTod</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TDeawbtQak</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tDRBy4W9Zl</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">th4BTTdejn</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tImka2oJfN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TL8HKOr3Zf</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TLUnMwBi5l</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TpbcYYSWOW</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tpcBuHTdNU</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TR2w4HENvP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Truv1wIySq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tvK5iu2cAC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TVnxSFaRx9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tw5W7Qbtj0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tw6WyLKUjk</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Txow5rWPy0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ty5Nj7Q7qy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TYESeRLpLx</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">U1n5mct7S5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UbjSMyY3Yv</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">uEIvFLtZoi</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uf8FnTVt3p</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ugl0jsRbNC</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uHEjgmMMkZ</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ui7JHRvEE5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UIdpdp5uyW</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">uLlFAYeZox</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UmpBYIjUdl</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UpJavpJjcE</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">URtGYUHBPt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">uUfPL4JcDb</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uzVDXBp4Eb</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">v9BWKdKVcj</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Va5ckik4TH</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vCoMoN0nxn</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vEy2fO8h49</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vfRPyGQCZx</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VHr730jB8J</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vI436RuanV</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vIv6OrKoz2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VmKpYnqgjR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VmsMuFbeaR</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vPIgtYfajs</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VSZgUioqaq</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vu5FArxzrO</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vUE4WM0a6y</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vvkJsLuJxS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vw4j3MUisA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vynBhGBi1s</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VZCowHra3g</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">W1RnB5KtU0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">w72qDVN8wg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wAdOTkqcVB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WBFnN7QijX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wBx9EfPRNm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wC9vzfHz9r</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wd9c3i4uAE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeT99tUzeG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WHdkQk72cE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wKRNI6mFmA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wL1uDbjB9E</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WlvX1C1Cty</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WLXinkAQgY</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WNYnXcivgX</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wr9gIWKrsy</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WtjTWDPc9L</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WXDrmipBND</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">X1D8zzWuCf</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x1Qmew2slZ</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">X5xcxJ7jXT</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">XBGJeeJbXe</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xc1KEfeytQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">XdLby6vUTB</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xh3sbG2HTT</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xJtxFlSesn</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xMiZtti24v</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">XO0csCPs5c</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">XSdtOJAsP0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xvdk1i52gn</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xXi9ShtafD</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">y95ylFGC9g</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YBmZqtI7KQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">YbQUaT5L2x</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">yDEk3CdIeW</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ydltv5euoY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YgDElYfvE0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">yJsQQBfQez</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">yKRggPRMUp</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.2000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">yLa0J5HdQd</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">yNqSRBjRWk</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">yQHckuQMbN</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ySeMlxd4vL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">YVVSLbcp13</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YZhJwKfDWQ</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">yzsKhZTniG</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Z38BmiAK3J</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">z5y4VEoG26</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z6iopvzvjy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Z7gazDSeSn</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zaUXaRbwlT</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ZBxL6oXiRu</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ZFWVAILhG9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zhkne19RKA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zjtCvlvebK</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zKUc7c91aC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zLntwDiKkl</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zREge62I9O</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zSzRvhn5DI</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ZTTZ4cRcf1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For excluding subject from analysis because of their inattentiveness a threshold of <strong>33% misses (5 possible misses)</strong> was chosen. Excluded participants are presented below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+taia_quality %&gt;% 
+  filter(`Number of misses` &gt; 5) -&gt; excluded_subjects</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+kable(excluded_subjects)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">Number of misses</th>
+<th style="text-align: right;">Proportion of misses</th>
+<th style="text-align: right;">Minimum miss</th>
+<th style="text-align: right;">Maximum miss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6FW07m2tQ1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ANYQgWhzlF</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.6000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F8vTCgryz1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1FGjQ3RgQ</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GbVZHHgTMU</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gvYbtDzrAX</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GxuhLRJcZG</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I3hzGdW8WD</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I5sSLM22Gh</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.9333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ipnDbcE7u4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JamvFbuBYK</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JVebCg3jvw</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kI498bAOJr</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.4000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lq1BncsQHb</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.7333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ofyqe53y4A</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.8000000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ONkg2bUC9V</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PcsDFzRVUI</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uzVDXBp4Eb</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.8666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Total number of excluded subject is 18.</p>
+<h2 id="reverse-items">Reverse items</h2>
+<p>Write function for reversinf items:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+reverse &lt;- function(x) {
+  as.numeric(
+    dplyr::recode(x,
+                &quot;0&quot; = &quot;5&quot;,
+                &quot;1&quot; = &quot;4&quot;,
+                &quot;2&quot; = &quot;3&quot;,
+                &quot;3&quot; = &quot;2&quot;,
+                &quot;4&quot; = &quot;1&quot;,
+                &quot;5&quot; = &quot;0&quot;)
+  )
+}</code></pre>
+</div>
+<p>Reverse items and remove control items. Rename reverse items:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+reversed_items &lt;- str_extract(colnames(raw), pattern = regex(&quot;^[:alpha:]{2}[:digit:]{2}r$&quot;)) %&gt;% na.omit()
+
+raw %&gt;%
+  mutate_at(all_of(reversed_items), reverse) %&gt;% 
+  select(-all_of(aux_items$code)) %&gt;% 
+  rename_at(all_of(reversed_items),
+            function(x) str_replace_all(x, &quot;r$&quot;, &quot;&quot;)) -&gt; taia
+
+kable(head(taia))</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 0%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+<col style="width: 2%"></col>
+<col style="width: 4%"></col>
+<col style="width: 1%"></col>
+<col style="width: 1%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">pr01</th>
+<th style="text-align: right;">pr02</th>
+<th style="text-align: right;">pr03</th>
+<th style="text-align: right;">pr04</th>
+<th style="text-align: right;">pr05</th>
+<th style="text-align: right;">pr06</th>
+<th style="text-align: right;">pr07</th>
+<th style="text-align: right;">pr08</th>
+<th style="text-align: right;">pr09</th>
+<th style="text-align: right;">pr10</th>
+<th style="text-align: right;">co01</th>
+<th style="text-align: right;">co02</th>
+<th style="text-align: right;">co03</th>
+<th style="text-align: right;">co04</th>
+<th style="text-align: right;">co05</th>
+<th style="text-align: right;">co06</th>
+<th style="text-align: right;">co07</th>
+<th style="text-align: right;">co08</th>
+<th style="text-align: right;">co09</th>
+<th style="text-align: right;">co10</th>
+<th style="text-align: right;">ut01</th>
+<th style="text-align: right;">ut02</th>
+<th style="text-align: right;">ut03</th>
+<th style="text-align: right;">ut04</th>
+<th style="text-align: right;">ut05</th>
+<th style="text-align: right;">ut06</th>
+<th style="text-align: right;">ut07</th>
+<th style="text-align: right;">ut08</th>
+<th style="text-align: right;">ut09</th>
+<th style="text-align: right;">ut10</th>
+<th style="text-align: right;">ut11</th>
+<th style="text-align: right;">ut12</th>
+<th style="text-align: right;">fa01</th>
+<th style="text-align: right;">fa02</th>
+<th style="text-align: right;">fa03</th>
+<th style="text-align: right;">fa04</th>
+<th style="text-align: right;">fa05</th>
+<th style="text-align: right;">fa06</th>
+<th style="text-align: right;">fa07</th>
+<th style="text-align: right;">fa08</th>
+<th style="text-align: right;">fa09</th>
+<th style="text-align: right;">fa10</th>
+<th style="text-align: right;">de01</th>
+<th style="text-align: right;">de02</th>
+<th style="text-align: right;">de03</th>
+<th style="text-align: right;">de04</th>
+<th style="text-align: right;">de05</th>
+<th style="text-align: right;">de06</th>
+<th style="text-align: right;">de07</th>
+<th style="text-align: right;">de08</th>
+<th style="text-align: right;">de09</th>
+<th style="text-align: right;">de10</th>
+<th style="text-align: right;">de11</th>
+<th style="text-align: right;">un01</th>
+<th style="text-align: right;">un02</th>
+<th style="text-align: right;">un03</th>
+<th style="text-align: right;">un04</th>
+<th style="text-align: right;">un05</th>
+<th style="text-align: right;">un06</th>
+<th style="text-align: right;">un07</th>
+<th style="text-align: right;">un08</th>
+<th style="text-align: right;">un09</th>
+<th style="text-align: right;">un10</th>
+<th style="text-align: right;">un11</th>
+<th style="text-align: right;">un12</th>
+<th style="text-align: right;">gt01</th>
+<th style="text-align: right;">gt02</th>
+<th style="text-align: right;">gt03</th>
+<th style="text-align: right;">gt04</th>
+<th style="text-align: right;">gt05</th>
+<th style="text-align: right;">gt06</th>
+<th style="text-align: right;">socnet</th>
+<th style="text-align: right;">vk</th>
+<th style="text-align: right;">fb</th>
+<th style="text-align: right;">tw</th>
+<th style="text-align: right;">in</th>
+<th style="text-align: right;">tt</th>
+<th style="text-align: right;">yt</th>
+<th style="text-align: right;">freqvk</th>
+<th style="text-align: right;">freqfb</th>
+<th style="text-align: right;">freqtw</th>
+<th style="text-align: right;">freqin</th>
+<th style="text-align: right;">freqtt</th>
+<th style="text-align: right;">freqyt</th>
+<th style="text-align: right;">expvk</th>
+<th style="text-align: right;">expfb</th>
+<th style="text-align: right;">exptw</th>
+<th style="text-align: right;">expin</th>
+<th style="text-align: right;">exptt</th>
+<th style="text-align: right;">expyt</th>
+<th style="text-align: right;">dighelp</th>
+<th style="text-align: right;">siri</th>
+<th style="text-align: right;">alice</th>
+<th style="text-align: right;">salut</th>
+<th style="text-align: right;">oleg</th>
+<th style="text-align: right;">alex</th>
+<th style="text-align: right;">mia</th>
+<th style="text-align: right;">mts</th>
+<th style="text-align: right;">ggle</th>
+<th style="text-align: right;">oth</th>
+<th style="text-align: left;">oth_text</th>
+<th style="text-align: right;">expsiri</th>
+<th style="text-align: right;">expalice</th>
+<th style="text-align: right;">expsalut</th>
+<th style="text-align: right;">expoleg</th>
+<th style="text-align: right;">expalex</th>
+<th style="text-align: right;">expmia</th>
+<th style="text-align: right;">expmts</th>
+<th style="text-align: right;">expggle</th>
+<th style="text-align: right;">expoth</th>
+<th style="text-align: left;">expoth_text</th>
+<th style="text-align: right;">selfdrcar</th>
+<th style="text-align: right;">selfdrexp</th>
+<th style="text-align: right;">selfdrsafe</th>
+<th style="text-align: right;">eduai</th>
+<th style="text-align: right;">eduaiexp</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: left;">edulvl1</th>
+<th style="text-align: left;">spec1</th>
+<th style="text-align: right;">edu2</th>
+<th style="text-align: left;">edulvl2</th>
+<th style="text-align: left;">spec2</th>
+<th style="text-align: left;">jobfield</th>
+<th style="text-align: left;">jobpos</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">bachelor</td>
+<td style="text-align: left;">психология</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Москва</td>
+<td style="text-align: left;">QxKxlY255X</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">bachelor</td>
+<td style="text-align: left;">психология</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">не работаю</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Москва</td>
+<td style="text-align: left;">SbM6fcsHP9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">bachelor</td>
+<td style="text-align: left;">преподаватель</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">college</td>
+<td style="text-align: left;">бухгалтер</td>
+<td style="text-align: left;">энергетика</td>
+<td style="text-align: left;">специалист по договорной работе</td>
+<td style="text-align: left;">оренбург</td>
+<td style="text-align: left;">wL1uDbjB9E</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: left;">specialist</td>
+<td style="text-align: left;">инженер</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">машиностроение</td>
+<td style="text-align: left;">инженер-конструктор</td>
+<td style="text-align: left;">Первомайск</td>
+<td style="text-align: left;">Ofyqe53y4A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">college</td>
+<td style="text-align: left;">Повар</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">Сфера обслуживания</td>
+<td style="text-align: left;">Администратор</td>
+<td style="text-align: left;">Калининград</td>
+<td style="text-align: left;">pRPqAwQVda</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">college</td>
+<td style="text-align: left;">секретарь</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">секретарь</td>
+<td style="text-align: left;">секретарь</td>
+<td style="text-align: left;">ижевск</td>
+<td style="text-align: left;">6FW07m2tQ1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="export-data">Export data</h1>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+taia %&gt;% 
+  write_csv(&quot;~/taia/data/taia.csv&quot;)</code></pre>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -1,7 +1,7 @@
 ---
 title: "Trust in Artificial Intelligent Agents Scale"
 description: |
-  Data preprocess workflow
+  First quantitative approbation. Data preprocess workflow
 author:
   - name: Anton Angelgardt 
     url: https://www.hse.ru/en/staff/angelgardt
@@ -12,7 +12,7 @@ output: radix::radix_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Intro
@@ -33,7 +33,9 @@ Scale consists of six blocks. Each block contains 10--12 items.
 * Dependability: `de01`--`de11`
 * Understanding: `un01`--`un12`
 
-Reverse items are marked with `r` in its names.
+Scores range from `0` to `5`. Reverse items are marked with `r` in its names.
+
+Stems are [here](https://raw.githubusercontent.com/angelgardt/taia/master/preprocess/taia_items_1.txt).
 
 Sequence of blocks was randomly shuffled for each participant as well as items sequence inside each block.
 
@@ -43,17 +45,186 @@ Questionnaire includes 15 auxiliary items `au01`--`au15` (2 or 3 per block) for 
 
 ### GT
 
-Questionnaire has one scale from six items `gt01`--`gt06`. Scale has no reverse items.
+Questionnaire has one scale from six items `gt01`--`gt06`. Scores range from `0` to `4`. Scale has no reverse items.
+
+Stems are [here](https://github.com/angelgardt/taia/raw/master/preprocess/gt_items.txt).
+
 
 
 ### Questions aimed at scale validation
 
+Participants were asked to report their experience of dealing with AI technologies.
+
+* `socnet` --- Does participant have an social network or social media accounts? (`1` for ‘yes‘, `0` for ‘no’)
+  - if the answer is ‘no’, subject moves directly to `dighelp`
+* social networks and social media accounts that participant have
+  - `vk` for VKontakte
+  - `fb` for Facebook
+  - `tw` for Twitter
+  - `in` for Instagram
+  - `tt` for TikTok
+  - `yt` for YouTube
+* `freqvk`, `freqfb`, `freqtw`, `freqin`, `freqtt`, `freqyt` --- social media usage frequency (`0`--`3`)
+* `expvk`, `expfb`, `exptw`, `expin`, `exptt`, `expyt` --- a level of satisfying with social media recommender system (`0`--`5`)
+* `dighelp` --- Does participant use any digital assistants? (`1` for ‘yes‘, `0` for ‘no’)
+  - if the answer is ‘no’, subject moves directly to `selfdrcar`
+* digital assistants that participant use
+  - `siri` for Siri (Apple)
+  - `alice` for Alice (Yandex)
+  - `salut` for Salut (Sberbank)
+  - `oleg` for Oleg (Tinkoff Bank)
+  - `alex` for Alexandra (Moscow Metro)
+  - `mia` for Mia (Tele 2 mobile provider)
+  - `mts` for MTS AI (MTS mobile provider)
+  - `ggle` for Google Assistant
+  - `oth` for ‘Other’ option
+* `expsiri`, `expalice`, `expsalut`, `expoleg`, `expalex`, `expmia`, `expmts`, `expggle`, `expoth` --- How it was an interaction experience with these digital assistants? (`0`--`5`)
+* `selfdrcar` --- Does participant have an experience of driving a self-driving car? (`1` for ‘yes‘, `0` for ‘no’)
+  - if the answer is ‘no’, subject moves directly to `eduai`
+* `selfdrexp` --- How it was an experience of driving a self-driving car? (`0`--`5`)
+* `selfdrsafe` --- Did participant feel safe while driving a self-driving car? (`0`--`5`)
+* `eduai` --- Does participant face with AI technologies in education? (`1` for ‘yes‘, `0` for ‘no’)
+  - if the answer is ‘no’, subject moves directly to demographic part
+* `eduaiexp` --- How it was an experience of dealing with AI for education? (`0`--`5`)
+
+
+
+### Demographic info
+
+* `age` --- participants’ age
+* `sex` --- participants’ gender
+  - `m` for ‘masculine’, `f` for ‘feminine’, `a` for ‘other’
+* `edulvl1` --- a highest level of [first] education
+  - `school` / `college` / `bachelor` / `srecialist` / `master` / `postgrad`
+* `spec1` --- [first] education specialization
+* `edu2` --- Does participant have another education with different specialization? (`1` for ‘yes‘, `0` for ‘no’)
+  - if the answer is ‘no’, subject moves directly to `jobfield`
+* `edulvl2` --- a highest level of second education
+  - `school` / `college` / `bachelor` / `srecialist` / `master` / `postgrad`
+* `spec2` --- second education specialization
+* `jobfield` --- field of current job
+* `joppos` --- job position
+* `city` --- current city of residence
+
+
+## Data preparation
+
+Before preprocessing `id` column with unique string for each observation was add. Also extra characters added by One Click Survey platform were removed while personal data was separated from questionnaire data.
+
+
+
+
+
+# Preprocessing
+
+```{r echo=FALSE}
+# load("preprocess.RData")
+# save.image("preprocess.RData")
+```
+
+## Add packages
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+## Import data
+
+```{r}
+raw <- read_csv('https://github.com/angelgardt/taia/raw/master/data/questionnaire_data.csv')
+str(raw)
+```
+
+
+## Check quality with control items
+
+Import keys for auxiliary items:
+
+```{r}
+aux_items <- read_csv2('https://github.com/angelgardt/taia/raw/master/data/aux_items.csv')
+str(aux_items)
+```
+
+Select `au` columns from questionnaire data, merge with keys and calculate differences between score and key. Then calculate basic statistics for differences and assess quality for each participant.
+
+```{r}
+raw %>% select(id, all_of(aux_items$code)) %>% 
+  pivot_longer(cols = aux_items$code,
+               names_to = 'code',
+               values_to = 'score') %>% 
+  full_join(aux_items %>% 
+              select(code, key)) %>% 
+  mutate(dif = abs(score - key)) %>% 
+  group_by(id) %>% 
+  summarise(n_miss = sum(dif != 0),
+            p_miss = n_miss / 15,
+            min = min(dif),
+            max = max(dif)) -> taia_quality
+```
+
+Quality of filling TAIA questionnaire assess based on control items:
+
+```{r}
+colnames(taia_quality) <- c("ID", "Number of misses", "Proportion of misses", "Minimum miss", "Maximum miss")
+kable(taia_quality)
+```
+
+For excluding subject from analysis because of their inattentiveness a threshold of **33% misses (5 possible misses)** was chosen. Excluded participants are presented below.
+
+```{r}
+taia_quality %>% 
+  filter(`Number of misses` > 5) -> excluded_subjects
+```
+```{r}
+kable(excluded_subjects)
+```
+
+Total number of excluded subject is `r nrow(excluded_subjects)`.
+
+
+
+## Reverse items
+
+Write function for reversinf items:
+
+```{r}
+reverse <- function(x) {
+  as.numeric(
+    dplyr::recode(x,
+                "0" = "5",
+                "1" = "4",
+                "2" = "3",
+                "3" = "2",
+                "4" = "1",
+                "5" = "0")
+  )
+}
+```
+
+Reverse items and remove control items. Rename reverse items:
+
+```{r}
+reversed_items <- str_extract(colnames(raw), pattern = regex("^[:alpha:]{2}[:digit:]{2}r$")) %>% na.omit()
+
+raw %>%
+  mutate_at(all_of(reversed_items), reverse) %>% 
+  select(-all_of(aux_items$code)) %>% 
+  rename_at(all_of(reversed_items),
+            function(x) str_replace_all(x, "r$", "")) -> taia
+
+kable(head(taia))
+```
 
 
 
 
 
 
+# Export data
 
-
+```{r, eval=FALSE}
+taia %>% 
+  write_csv("~/taia/data/taia.csv")
+```
 
