@@ -634,38 +634,51 @@ kable(un1$response.freq,
 # Exploratory Factor Analysis
 
 6 factors, varimax rotation
+
 ```{r}
 efa_6f_vm <- factanal(taia %>% select(all_of(taia_items)),
                    factors = 6,
                    scores = "regression",
                    rotation = "varimax")
 ```
+
 ```{r}
 loadings(efa_6f_vm)
 ```
+
+
 ```{r}
 kable(sort(efa_6f_vm$uniquenesses, decreasing = TRUE), col.names = "U")
 ```
 
+
 6 factors, promax rotation
+
 ```{r}
 efa_6f_pm <- factanal(taia %>% select(all_of(taia_items)),
                    factors = 6,
                    scores = "regression",
                    rotation = "promax")
 ```
+
 ```{r}
 loadings(efa_6f_pm)
 ```
+
 ```{r}
 kable(sort(efa_6f_pm$uniquenesses, decreasing = TRUE), col.names = "U")
 ```
 
 
 
+
+
+
 # Confirmatory Factor Analysis
 
+
 Model:
+
 ```{r}
 mdl1 <- "
 PR =~ pr01 + pr02 + pr03 + pr04 + pr05 + pr06 + pr07 + pr08 + pr09 + pr10
@@ -694,7 +707,9 @@ kable(
 )
 ```
 
+
 Standardized solution:
+
 ```{r}
 smodel1 <- standardizedsolution(model1)
 ```
@@ -710,6 +725,7 @@ kable(
 )
 ```
 
+
 Covariances:
 
 ```{r}
@@ -720,6 +736,7 @@ kable(
   col.names = c("Factor", "", "Factor", "Covariance", "SE", "z", "p", "CI lower bound", "CI upper bound")
 )
 ```
+
 
 Residuals:
 
@@ -733,11 +750,23 @@ kable(
 )
 ```
 
+
 Visualization:
+
 
 ```{r}
 semPaths(model1, "std")
 ```
+
+
+
+
+
+# Validation
+
+## Data preparation
+
+
 
 
 
