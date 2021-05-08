@@ -1,0 +1,17 @@
+---
+title: "Trust in Artificial Intelligent Agents Scale"
+description: |
+  Data preprocess workflow
+author:
+  - name: Anton Angelgardt 
+    url: https://www.hse.ru/en/staff/angelgardt
+    affiliation: HSE University
+    affiliation_url: https://www.hse.ru/en/
+date: "`r Sys.Date()`"
+output: radix::radix_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
