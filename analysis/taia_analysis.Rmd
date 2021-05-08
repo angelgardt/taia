@@ -1,0 +1,744 @@
+---
+title: "Trust in Artificial Intelligent Agents Scale"
+description: |
+  First quantitative approbation. Data analysis workflow
+author:
+  - name: Anton Angelgardt 
+    url: https://www.hse.ru/en/staff/angelgardt
+    affiliation: HSE University
+    affiliation_url: https://www.hse.ru/en/
+date: "`r Sys.Date()`"
+output: radix::radix_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+
+
+
+# Packages
+
+```{r}
+library(tidyverse)
+library(psych)
+library(lavaan)
+library(semPlot)
+library(knitr)
+library(corrplot)
+theme_set(theme_bw())
+```
+
+```{r echo=FALSE}
+# load("taia_analysis.RData")
+# save.image("taia_analysis.Rdata")
+```
+
+
+# Import data
+
+```{r}
+taia <- read_csv("https://github.com/angelgardt/taia/raw/master/data/taia.csv")
+```
+
+
+
+
+
+# Preparation
+
+Vectors of TAIA items:
+
+```{r}
+pr_items <- colnames(taia)[1:10]
+co_items <- colnames(taia)[11:20]
+ut_items <- colnames(taia)[21:32]
+fa_items <- colnames(taia)[33:42]
+de_items <- colnames(taia)[43:53]
+un_items <- colnames(taia)[54:65]
+taia_items <- colnames(taia)[1:65]
+```
+
+Vector of GT items:
+
+```{r}
+gt_items <- colnames(taia)[66:71]
+```
+
+Column names for further formatting:
+
+```{r}
+col_names <- c("", "Num. of obs.", "Mean", "SD",
+               "Median", "Trimmed Mean", "MAD",
+               "Min", "Max", "Range",
+               "Skewness", "Kurtuosis", "SE")
+total_colnames <- c("Alpha", "Standardized Alpha", "Guttman's Lambda 6",
+                    "Average interitem correlation", "S/N",
+                    "Alpha SE", "Scale Mean", "Total Score SD",
+                    "Median interitem correlation")
+item_stats_colnames <- c("Num. of Obs.", "Discrimination",
+                         "Std Cor",
+                         "Cor Overlap Corrected",
+                         "Cor if drop",
+                         "Difficulty", "SD")
+alpha_drop <- c("Alpha", "Standardized Alpha",
+                "Guttman's Lambda 6",	"Average interitem correlation",
+                "S/N",	"Alpha SE",	"Var(r)","Median interitem correlation")
+```
+
+
+
+
+# Exploratory analysis
+
+## TAIA descriptive statistics
+
+
+```{r}
+taia %>% 
+  select(all_of(pr_items)) %>% 
+  describe() %>% 
+  kable(caption = "Predictability", label = 1, digits = 2, col.names = col_names)
+```
+
+```{r}
+taia %>% 
+  select(all_of(co_items)) %>% 
+  describe() %>% 
+  kable(caption = "Consistency", label = 2, digits = 2, col.names = col_names)
+```
+
+```{r}
+taia %>% 
+  select(all_of(ut_items)) %>% 
+  describe() %>% 
+  kable(caption = "Utility", label = 3, digits = 2, col.names = col_names)
+```
+
+```{r}
+taia %>% 
+  select(all_of(fa_items)) %>% 
+  describe() %>% 
+  kable(caption = "Faith", label = 4, digits = 2, col.names = col_names)
+```
+
+```{r}
+taia %>% 
+  select(all_of(de_items)) %>% 
+  describe() %>% 
+  kable(caption = "Dependability", label = 5, digits = 2, col.names = col_names)
+```
+
+```{r}
+taia %>%
+  select(all_of(un_items)) %>% 
+  describe() %>% 
+  kable(caption = "Understanding", label = 6, digits = 2, col.names = col_names)
+```
+
+
+
+### TAIA scores distributions
+
+```{r}
+taia %>% select(all_of(pr_items)) %>% 
+  pivot_longer(cols = pr_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "darkred") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Predictability") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+taia %>% select(all_of(co_items)) %>% 
+  pivot_longer(cols = co_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "chocolate3") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Consistency") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+taia %>% select(all_of(ut_items)) %>% 
+  pivot_longer(cols = ut_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "goldenrod3") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Utility") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+taia %>% select(all_of(fa_items)) %>% 
+  pivot_longer(cols = fa_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "darkgreen") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Faith") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+taia %>% select(all_of(de_items)) %>% 
+  pivot_longer(cols = de_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "darkblue") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Dependability") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+taia %>% select(all_of(un_items)) %>% 
+  pivot_longer(cols = un_items) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "purple4") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = factor(0:5)) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Understanding") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+
+
+### Correlations
+
+
+#### Predictability
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(pr_items))),
+               lower.col = "black")
+```
+
+#### Consistency
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(co_items))),
+               lower.col = "black")
+```
+
+
+#### Utility
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(ut_items))),
+               lower.col = "black")
+```
+
+
+#### Faith
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(fa_items))),
+               lower.col = "black")
+```
+
+
+#### Dependability
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(de_items))),
+               lower.col = "black")
+```
+
+#### Understanding
+
+```{r}
+corrplot.mixed(cor(taia %>% select(all_of(un_items))),
+               lower.col = "black")
+```
+
+
+### All TAIA items correlations
+
+```{r}
+qgraph::qgraph(
+  cor(taia %>% select(all_of(taia_items))),
+  layout = "spring",
+  posCol = "darkgreen",
+  negCol = "darkred"
+)
+```
+
+
+
+
+
+
+## Psychometric Analysis
+
+### Subscales
+
+#### Predictability
+
+```{r}
+pr1 <- psych::alpha(
+  taia %>% select(all_of(pr_items)),
+  cumulative = TRUE,
+  title = "Predictability Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(pr1$total,
+      caption = "Perdictability. Subscale statistics", 
+      label = 7, digits = 2,
+      col.names = total_colnames
+      )
+```
+
+```{r}
+pr1$item.stats$mean <- pr1$item.stats$mean / 5
+kable(pr1$item.stats,
+      caption = "Predictability. Items statistics",
+      label = 8, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+pr1$item.stats %>%
+  ggplot(aes(x = row.names(pr1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Predictability. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(pr1$alpha.drop,
+      caption = "Predictability. Subscale statistics when item drop",
+      label = 9, digits = 2, col.names = alpha_drop)
+```
+
+
+```{r}
+kable(pr1$response.freq,
+      caption = "Predictability. Non missing response frequency for each item",
+      label = 10, digits = 2)
+```
+
+
+
+#### Consistency
+
+```{r}
+co1 <- psych::alpha(
+  taia %>% select(all_of(co_items)),
+  cumulative = TRUE,
+  title = "Consistency Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(co1$total,
+      caption = "Consistency. Subscale statistics", 
+      label = 11, digits = 2,
+      col.names = total_colnames)
+```
+
+
+```{r}
+co1$item.stats$mean <- co1$item.stats$mean / 5
+kable(co1$item.stats,
+      caption = "Consistency. Items statistics",
+      label = 12, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+co1$item.stats %>%
+  ggplot(aes(x = row.names(co1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Consistency. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(co1$alpha.drop,
+      caption = "Consistency. Subscale statistics when item drop",
+      label = 13, digits = 2,
+      col.names = alpha_drop)
+```
+
+```{r}
+kable(co1$response.freq,
+      caption = "Consistency. Non missing response frequency for each item",
+      label = 14, digits = 2)
+```
+
+
+
+#### Utility
+
+```{r}
+ut1 <- psych::alpha(
+  taia %>% select(all_of(ut_items)),
+  cumulative = TRUE,
+  title = "Utility Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(ut1$total,
+      caption = "Utility. Subscale statistics", 
+      label = 15, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+ut1$item.stats$mean <- ut1$item.stats$mean / 5
+kable(ut1$item.stats,
+      caption = "Utility. Items statistics",
+      label = 16, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+ut1$item.stats %>%
+  ggplot(aes(x = row.names(ut1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Utility. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(ut1$alpha.drop,
+      caption = "Utility. Subscale statistics when item drop",
+      label = 17, digits = 2,
+      col.names = alpha_drop)
+```
+
+```{r}
+kable(ut1$response.freq,
+      caption = "Utility. Non missing response frequency for each item",
+      label = 18, digits = 2)
+```
+
+
+
+#### Faith
+
+```{r}
+fa1 <- psych::alpha(
+  taia %>% select(all_of(fa_items)),
+  cumulative = TRUE,
+  title = "Faith Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(fa1$total,
+      caption = "Faith. Subscale statistics", 
+      label = 19, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+fa1$item.stats$mean <- fa1$item.stats$mean / 5
+kable(fa1$item.stats,
+      caption = "Faith. Items statistics",
+      label = 20, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+fa1$item.stats %>%
+  ggplot(aes(x = row.names(fa1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Faith. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(fa1$alpha.drop,
+      caption = "Faith. Subscale statistics when item drop",
+      label = 21, digits = 2,
+      col.names = alpha_drop)
+```
+
+```{r}
+kable(fa1$response.freq,
+      caption = "Faith. Non missing response frequency for each item",
+      label = 22, digits = 2)
+```
+
+
+
+#### Dependability
+
+```{r}
+de1 <- psych::alpha(
+  taia %>% select(all_of(de_items)),
+  cumulative = TRUE,
+  title = "Dependability Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(de1$total,
+      caption = "Dependability. Subscale statistics", 
+      label = 23, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+de1$item.stats$mean <- de1$item.stats$mean / 5
+kable(de1$item.stats,
+      caption = "Dependability. Items statistics",
+      label = 24, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+de1$item.stats %>%
+  ggplot(aes(x = row.names(de1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Dependability. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(de1$alpha.drop,
+      caption = "Dependability. Subscale statistics when item drop",
+      label = 25, digits = 2,
+      col.names = alpha_drop)
+```
+
+```{r}
+kable(de1$response.freq,
+      caption = "Dependability. Non missing response frequency for each item",
+      label = 26, digits = 2)
+```
+
+
+
+#### Understanding
+
+```{r}
+un1 <- psych::alpha(
+  taia %>% select(all_of(un_items)),
+  cumulative = TRUE,
+  title = "Understanding Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(un1$total,
+      caption = "Understanding. Subscale statistics", 
+      label = 27, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+un1$item.stats$mean <- un1$item.stats$mean / 5
+kable(un1$item.stats,
+      caption = "Understanding. Items statistics",
+      label = 28, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+un1$item.stats %>%
+  ggplot(aes(x = row.names(un1$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.05, color = "darkblue") +
+  geom_hline(yintercept = 0.95, color = "darkblue") +
+  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Understanding. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(un1$alpha.drop,
+      caption = "Understanding. Subscale statistics when item drop",
+      label = 29, digits = 2,
+      col.names = alpha_drop)
+```
+```{r}
+kable(un1$response.freq,
+      caption = "Understanding. Non missing response frequency for each item",
+      label = 30, digits = 2)
+```
+
+
+
+## Items exclusion
+
+
+
+# Exploratory Factor Analysis
+
+6 factors, varimax rotation
+```{r}
+efa_6f_vm <- factanal(taia %>% select(all_of(taia_items)),
+                   factors = 6,
+                   scores = "regression",
+                   rotation = "varimax")
+```
+```{r}
+loadings(efa_6f_vm)
+```
+```{r}
+kable(sort(efa_6f_vm$uniquenesses, decreasing = TRUE), col.names = "U")
+```
+
+6 factors, promax rotation
+```{r}
+efa_6f_pm <- factanal(taia %>% select(all_of(taia_items)),
+                   factors = 6,
+                   scores = "regression",
+                   rotation = "promax")
+```
+```{r}
+loadings(efa_6f_pm)
+```
+```{r}
+kable(sort(efa_6f_pm$uniquenesses, decreasing = TRUE), col.names = "U")
+```
+
+
+
+# Confirmatory Factor Analysis
+
+Model:
+```{r}
+mdl1 <- "
+PR =~ pr01 + pr02 + pr03 + pr04 + pr05 + pr06 + pr07 + pr08 + pr09 + pr10
+CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co07 + co08 + co09 + co10
+UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut10 + ut11 + ut12
+FA =~ fa01 + fa02 + fa03 + fa04 + fa05 + fa06 + fa07 + fa08 + fa09 + fa10
+DE =~ de01 + de02 + de03 + de04 + de05 + de06 + de07 + de08 + de09 + de10 + de11
+UN =~ un01 + un02 + un03 + un04 + un05 + un06 + un07 + un08 + un09 + un10 + un11 + un12
+"
+```
+
+CFA model fitting:
+
+```{r}
+model1 <- cfa(mdl1, taia %>% select(all_of(taia_items)))
+```
+
+Fit measures:
+
+```{r}
+kable(
+  tibble(Measure = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
+               Value = round(
+                 fitmeasures(model1, c("chisq", "df", "pvalue", "gfi", "agfi", "cfi", "tli", "srmr", "rmsea")), 4)
+    )
+)
+```
+
+Standardized solution:
+```{r}
+smodel1 <- standardizedsolution(model1)
+```
+
+Loadings:
+
+```{r}
+kable(
+  smodel1 %>% 
+    filter(op == "=~") %>% 
+    mutate_at(vars(4:9), function(x) round(x, 3)),
+  col.names = c("Factor", "", "Item", "Loading", "SE", "z", "p", "CI lower bound", "CI upper bound")
+)
+```
+
+Covariances:
+
+```{r}
+kable(
+  smodel1 %>% 
+    filter(op == "~~" & lhs != rhs) %>% 
+    mutate_at(vars(4:9), function(x) round(x, 3)),
+  col.names = c("Factor", "", "Factor", "Covariance", "SE", "z", "p", "CI lower bound", "CI upper bound")
+)
+```
+
+Residuals:
+
+```{r}
+kable(
+  smodel1 %>% 
+    filter(op == "~~" & lhs == rhs) %>% 
+    mutate_at(vars(4:9), function(x) round(x, 3)) %>% 
+    select(-(2:3)),
+  col.names = c("Item", "Residual", "SE", "z", "p", "CI lower bound", "CI upper bound")
+)
+```
+
+Visualization:
+
+```{r}
+semPaths(model1, "std")
+```
+
+
+
+
