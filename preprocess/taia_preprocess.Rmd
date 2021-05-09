@@ -95,12 +95,12 @@ Participants were asked to report their experience of dealing with AI technologi
 * `sex` --- participants’ gender
   - `m` for ‘masculine’, `f` for ‘feminine’, `a` for ‘other’
 * `edulvl1` --- a highest level of [first] education
-  - `school` / `college` / `bachelor` / `srecialist` / `master` / `postgrad`
+  - `school` / `college` / `bachelor` / `specialist` / `master` / `postgrad`
 * `spec1` --- [first] education specialization
 * `edu2` --- Does participant have another education with different specialization? (`1` for ‘yes‘, `0` for ‘no’)
   - if the answer is ‘no’, subject moves directly to `jobfield`
 * `edulvl2` --- a highest level of second education
-  - `school` / `college` / `bachelor` / `srecialist` / `master` / `postgrad`
+  - `school` / `college` / `bachelor` / `specialist` / `master` / `postgrad`
 * `spec2` --- second education specialization
 * `jobfield` --- field of current job
 * `joppos` --- job position
@@ -166,23 +166,33 @@ raw %>% select(id, all_of(aux_items$code)) %>%
 Quality of filling TAIA questionnaire assess based on control items:
 
 ```{r}
-colnames(taia_quality) <- c("ID", "Number of misses", "Proportion of misses", "Minimum miss", "Maximum miss")
-kable(taia_quality)
+kable(taia_quality, 
+      digits = 2,
+      col.names = c("ID", "Number of misses", "Proportion of misses",
+                    "Minimum miss", "Maximum miss"))
 ```
 
 For excluding subject from analysis because of their inattentiveness a threshold of **33% misses (5 possible misses)** was chosen. Excluded participants are presented below.
 
 ```{r}
 taia_quality %>% 
-  filter(`Number of misses` > 5) -> excluded_subjects
+  filter(n_miss > 5) -> excluded_subjects
 ```
 ```{r}
-kable(excluded_subjects)
+kable(excluded_subjects,
+      digits = 2,
+      col.names = c("ID", "Number of misses", "Proportion of misses",
+                    "Minimum miss", "Maximum miss"))
 ```
 
 Total number of excluded subject is `r nrow(excluded_subjects)`.
 
+Removing low quality observations:
 
+```{r}
+raw %>% 
+  anti_join(excluded_subjects) -> taia
+```
 
 ## Reverse items
 
@@ -206,13 +216,18 @@ Reverse items and remove control items. Rename reverse items:
 
 ```{r}
 reversed_items <- str_extract(colnames(raw), pattern = regex("^[:alpha:]{2}[:digit:]{2}r$")) %>% na.omit()
-
-raw %>%
+```
+```{r}
+kable(reversed_items, col.names = "Reverse Items")
+```
+```{r}
+taia %>%
   mutate_at(all_of(reversed_items), reverse) %>% 
   select(-all_of(aux_items$code)) %>% 
   rename_at(all_of(reversed_items),
             function(x) str_replace_all(x, "r$", "")) -> taia
-
+```
+```{r}
 kable(head(taia))
 ```
 

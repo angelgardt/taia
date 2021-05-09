@@ -676,6 +676,7 @@ kable(sort(efa_6f_pm$uniquenesses, decreasing = TRUE), col.names = "U")
 
 # Confirmatory Factor Analysis
 
+## Basic model
 
 Model:
 
@@ -700,7 +701,7 @@ Fit measures:
 
 ```{r}
 kable(
-  tibble(Measure = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
+  tibble(`Model 1` = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
                Value = round(
                  fitmeasures(model1, c("chisq", "df", "pvalue", "gfi", "agfi", "cfi", "tli", "srmr", "rmsea")), 4)
     )
@@ -759,6 +760,38 @@ semPaths(model1, "std")
 ```
 
 
+## Model with general factor
+
+Model:
+
+```{r}
+mdl2 <- "
+PR =~ pr01 + pr02 + pr03 + pr04 + pr05 + pr06 + pr07 + pr08 + pr09 + pr10
+CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co07 + co08 + co09 + co10
+UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut10 + ut11 + ut12
+FA =~ fa01 + fa02 + fa03 + fa04 + fa05 + fa06 + fa07 + fa08 + fa09 + fa10
+DE =~ de01 + de02 + de03 + de04 + de05 + de06 + de07 + de08 + de09 + de10 + de11
+UN =~ un01 + un02 + un03 + un04 + un05 + un06 + un07 + un08 + un09 + un10 + un11 + un12
+DigTrust =~ PR + CO + UT + FA + DE + UN
+"
+```
+
+```{r}
+model2 <- cfa(mdl2, taia %>% select(all_of(taia_items)))
+```
+
+```{r}
+kable(
+  tibble(`Model 2` = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
+               Value = round(
+                 fitmeasures(model2, c("chisq", "df", "pvalue", "gfi", "agfi", "cfi", "tli", "srmr", "rmsea")), 4)
+    )
+)
+```
+
+```{r}
+semPaths(model2, "std")
+```
 
 
 
