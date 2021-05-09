@@ -40,6 +40,7 @@ theme_set(theme_bw())
 
 ```{r}
 taia <- read_csv("https://github.com/angelgardt/taia/raw/master/data/taia.csv")
+str(taia)
 ```
 
 
@@ -143,7 +144,7 @@ taia %>%
 
 ```{r}
 taia %>% select(all_of(pr_items)) %>% 
-  pivot_longer(cols = pr_items) %>% 
+  pivot_longer(cols = all_of(pr_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "darkred") +
   facet_wrap(~ name) +
@@ -155,7 +156,7 @@ taia %>% select(all_of(pr_items)) %>%
 
 ```{r}
 taia %>% select(all_of(co_items)) %>% 
-  pivot_longer(cols = co_items) %>% 
+  pivot_longer(cols = all_of(co_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "chocolate3") +
   facet_wrap(~ name) +
@@ -167,7 +168,7 @@ taia %>% select(all_of(co_items)) %>%
 
 ```{r}
 taia %>% select(all_of(ut_items)) %>% 
-  pivot_longer(cols = ut_items) %>% 
+  pivot_longer(cols = all_of(ut_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "goldenrod3") +
   facet_wrap(~ name) +
@@ -179,7 +180,7 @@ taia %>% select(all_of(ut_items)) %>%
 
 ```{r}
 taia %>% select(all_of(fa_items)) %>% 
-  pivot_longer(cols = fa_items) %>% 
+  pivot_longer(cols = all_of(fa_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "darkgreen") +
   facet_wrap(~ name) +
@@ -191,7 +192,7 @@ taia %>% select(all_of(fa_items)) %>%
 
 ```{r}
 taia %>% select(all_of(de_items)) %>% 
-  pivot_longer(cols = de_items) %>% 
+  pivot_longer(cols = all_of(de_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "darkblue") +
   facet_wrap(~ name) +
@@ -203,7 +204,7 @@ taia %>% select(all_of(de_items)) %>%
 
 ```{r}
 taia %>% select(all_of(un_items)) %>% 
-  pivot_longer(cols = un_items) %>% 
+  pivot_longer(cols = all_of(un_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "purple4") +
   facet_wrap(~ name) +
@@ -316,9 +317,9 @@ pr1$item.stats %>%
   ggplot(aes(x = row.names(pr1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Predictability. Items characteristics",
@@ -374,9 +375,9 @@ co1$item.stats %>%
   ggplot(aes(x = row.names(co1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Consistency. Items characteristics",
@@ -431,9 +432,9 @@ ut1$item.stats %>%
   ggplot(aes(x = row.names(ut1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Utility. Items characteristics",
@@ -488,9 +489,9 @@ fa1$item.stats %>%
   ggplot(aes(x = row.names(fa1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Faith. Items characteristics",
@@ -545,9 +546,9 @@ de1$item.stats %>%
   ggplot(aes(x = row.names(de1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Dependability. Items characteristics",
@@ -602,9 +603,9 @@ un1$item.stats %>%
   ggplot(aes(x = row.names(un1$item.stats))) +
   geom_point(aes(y = mean), color = "darkblue", size = 3) +
   geom_point(aes(y = raw.r), color = "darkred", size = 2) +
-  geom_hline(yintercept = 0.05, color = "darkblue") +
-  geom_hline(yintercept = 0.95, color = "darkblue") +
-  geom_hline(yintercept = 0.2, color = "darkred") +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
   geom_hline(yintercept = 0, color = "black") +
   labs(x = "Item", y = "Value",
        title = "Understanding. Items characteristics",
@@ -619,6 +620,7 @@ kable(un1$alpha.drop,
       label = 29, digits = 2,
       col.names = alpha_drop)
 ```
+
 ```{r}
 kable(un1$response.freq,
       caption = "Understanding. Non missing response frequency for each item",
@@ -628,6 +630,9 @@ kable(un1$response.freq,
 
 
 ## Items exclusion
+
+
+
 
 
 
