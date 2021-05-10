@@ -178,6 +178,7 @@ For excluding subject from analysis because of their inattentiveness a threshold
 taia_quality %>% 
   filter(n_miss > 5) -> excluded_subjects
 ```
+
 ```{r}
 kable(excluded_subjects,
       digits = 2,
@@ -217,6 +218,7 @@ Reverse items and remove control items. Rename reverse items:
 ```{r}
 reversed_items <- str_extract(colnames(raw), pattern = regex("^[:alpha:]{2}[:digit:]{2}r$")) %>% na.omit()
 ```
+
 ```{r}
 kable(reversed_items, col.names = "Reverse Items")
 ```
@@ -227,19 +229,102 @@ taia %>%
   rename_at(all_of(reversed_items),
             function(x) str_replace_all(x, "r$", "")) -> taia
 ```
+
 ```{r}
 kable(head(taia))
 ```
 
 
 
+# Integral score for General Trust Scale
+
+```{r}
+taia %>% 
+  select(id, gt01, gt02, gt03, gt04, gt05, gt06) %>% 
+  pivot_longer(cols = c("gt01", "gt02", "gt03", "gt04", "gt05", "gt06"),
+               names_to = "gt_items", values_to = "gt_scores") %>%
+  group_by(id) %>% 
+  summarise(gt_score = mean(gt_scores)) %>% 
+  full_join(taia) -> taia
+```
+
+
+
+# Fix data from questions
+
+```{r}
+taia %>% select(id, 74:118) %>% 
+  mutate_all(function(x) ifelse(x < 0, NA, x)) -> questions
+```
+
+```{r}
+questions %>% 
+  select(id, vk, fb, tw, `in`, tt, yt) %>% 
+  pivot_longer(c("vk", "fb", "tw", "in", "tt", "yt"),
+               names_to = "socnets", values_to = "has_socnet") %>% 
+  na.omit() %>% 
+  group_by(id) %>% 
+  summarise(n_socnet = sum(has_socnet)) %>% 
+  full_join(taia) -> taia
+```
+
+```{r}
+questions %>% 
+  select(id, freqvk, freqfb, freqtw, freqin, freqtt, freqyt) %>% 
+  pivot_longer(c("freqvk", "freqfb", "freqtw", "freqin", "freqtt", "freqyt"),
+               names_to = "socnets", values_to = "freq_socnet") %>% 
+  group_by(id) %>% 
+  summarise(f_socnet = mean(freq_socnet, na.rm = TRUE)) %>% 
+  mutate_at(vars(f_socnet), function(x) ifelse(is.nan(x), NA, x)) %>% 
+  full_join(taia) -> taia
+```
+
+```{r}
+questions %>% 
+  select(id, expvk, expfb, exptw, expin, exptt, expyt) %>% 
+  pivot_longer(c("expvk", "expfb", "exptw", "expin", "exptt", "expyt"),
+               names_to = "socnets", values_to = "exp_socnet") %>% 
+  group_by(id) %>% 
+  summarise(e_socnet = mean(exp_socnet, na.rm = TRUE)) %>% 
+  mutate_at(vars(e_socnet), function(x) ifelse(is.nan(x), NA, x)) %>% 
+  full_join(taia) -> taia
+```
+
+```{r}
+questions %>% 
+  select(id, siri, alice, salut, oleg,
+         alex, mia, mts, ggle, oth) %>% 
+  pivot_longer(c("siri", "alice", "salut", "oleg",
+                 "alex", "mia", "mts", "ggle", "oth"),
+               names_to = "dighelper", values_to = "use_dighelper") %>% 
+  na.omit() %>% 
+  group_by(id) %>% 
+  summarise(n_dighelp = sum(use_dighelper)) %>% 
+  full_join(taia) -> taia
+```
+
+```{r}
+questions %>% 
+  select(id, expsiri, expalice, expsalut, expoleg,
+         expalex, expmia, expmts, expggle, expoth) %>% 
+  pivot_longer(c("expsiri", "expalice", "expsalut", "expoleg",
+         "expalex", "expmia", "expmts", "expggle", "expoth"), 
+         names_to = "dighelper", values_to = "exp_dighelper") %>% 
+  group_by(id) %>% 
+  summarise(e_dighelp = mean(exp_dighelper, na.rm = TRUE)) %>% 
+  mutate_at(vars(e_dighelp), function(x) ifelse(is.nan(x), NA, x)) %>% 
+  full_join(taia) -> taia
+```
 
 
 
 # Export data
 
+```{r}
+str(taia)
+```
+
 ```{r, eval=FALSE}
 taia %>% 
   write_csv("~/taia/data/taia.csv")
 ```
-
