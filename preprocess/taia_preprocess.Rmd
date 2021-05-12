@@ -169,7 +169,8 @@ Quality of filling TAIA questionnaire assess based on control items:
 kable(taia_quality, 
       digits = 2,
       col.names = c("ID", "Number of misses", "Proportion of misses",
-                    "Minimum miss", "Maximum miss"))
+                    "Minimum miss", "Maximum miss")) %>% 
+  head()
 ```
 
 For excluding subject from analysis because of their inattentiveness a threshold of **33% misses (5 possible misses)** was chosen. Excluded participants are presented below.
@@ -323,6 +324,7 @@ questions %>%
 ```{r}
 str(taia)
 ```
+
 
 ```{r, eval=FALSE}
 taia %>% 

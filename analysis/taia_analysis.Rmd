@@ -12,9 +12,13 @@ output: radix::radix_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
 ```
 
+
+# Preprocess
+
+Find preprocess workflow [here](https://angelgardt.github.io/taia/taia_preprocess.html).
 
 
 
@@ -27,6 +31,9 @@ library(lavaan)
 library(semPlot)
 library(knitr)
 library(corrplot)
+```
+
+```{r}
 theme_set(theme_bw())
 ```
 
@@ -52,19 +59,19 @@ str(taia)
 Vectors of TAIA items:
 
 ```{r}
-pr_items <- colnames(taia)[1:10]
-co_items <- colnames(taia)[11:20]
-ut_items <- colnames(taia)[21:32]
-fa_items <- colnames(taia)[33:42]
-de_items <- colnames(taia)[43:53]
-un_items <- colnames(taia)[54:65]
-taia_items <- colnames(taia)[1:65]
+pr_items <- colnames(taia)[8:17]
+co_items <- colnames(taia)[18:27]
+ut_items <- colnames(taia)[28:39]
+fa_items <- colnames(taia)[40:49]
+de_items <- colnames(taia)[50:60]
+un_items <- colnames(taia)[61:72]
+taia_items <- colnames(taia)[8:72]
 ```
 
 Vector of GT items:
 
 ```{r}
-gt_items <- colnames(taia)[66:71]
+gt_items <- colnames(taia)[73:78]
 ```
 
 Column names for further formatting:
@@ -83,7 +90,7 @@ item_stats_colnames <- c("Num. of Obs.", "Discrimination",
                          "Cor Overlap Corrected",
                          "Cor if drop",
                          "Difficulty", "SD")
-alpha_drop <- c("Alpha", "Standardized Alpha",
+alpha_drop_colnames <- c("Alpha", "Standardized Alpha",
                 "Guttman's Lambda 6",	"Average interitem correlation",
                 "S/N",	"Alpha SE",	"Var(r)","Median interitem correlation")
 ```
@@ -104,11 +111,80 @@ taia %>%
 ```
 
 ```{r}
+taia %>% select(all_of(pr_items)) %>% 
+  pivot_longer(cols = all_of(pr_items)) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "darkred") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = 0:5) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Predictability") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+* `pr01` OK
+  - Я считаю, что интеллектуальные системы надежны
+* `pr02` OK
+  - Я считаю, что результаты работы интеллектуальных систем хорошо предсказуемы
+* `pr03` OK
+  - Я считаю, что интеллектуальные системы ненадежны (R)
+* `pr04` OK
+  - Я считаю, что результаты работы интеллектуальных систем невозможно предсказать (R)
+* `pr05` positive skewness
+  - Я считаю, что поездки в машине, управляемой искусственным интеллектом, безопаснее, чем в обычной
+* `pr06` OK
+  - Я считаю, что медицинская диагностика с применением интеллектуальных систем надеждее, чем без них
+* `pr07` OK
+  - Я считаю, что финансовые операции под контролем искусственного интеллекта безопаснее, чем обычные
+* `pr08` high kurtosis
+  - Я считаю, что интеллектуальные системы, обеспечивающие безопасность домов, хорошо справляются со своей задачей
+* `pr09` high kurtosis
+  - Я считаю, что рекомендательные системы чаще всего правильно определяют предпочтения пользователей
+* `pr10` OK
+
+
+
+```{r}
 taia %>% 
   select(all_of(co_items)) %>% 
   describe() %>% 
   kable(caption = "Consistency", label = 2, digits = 2, col.names = col_names)
 ```
+
+```{r}
+taia %>% select(all_of(co_items)) %>% 
+  pivot_longer(cols = all_of(co_items)) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "chocolate3") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = 0:5) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Consistency") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+* `co01` OK
+  - Интеллектуальные системы надежны, так как те системы, с которыми я сталкивался (сталкивалась), были надежными
+* `co02` OK
+  - Я считаю, что если система при тестировании работает корректно, то и дальше она будет работать корректно
+* `co03` high kurtosis
+  - Я считаю, что интеллектуальные системы совершают меньше технических ошибок, чем люди
+* `co04` high negative skewness
+  - Со временем любая интеллектуальная система будет совершать всё меньше ошибок
+* `co05` positive skewness
+  - Если интеллектуальные системы, с которыми я сталкивался (сталкивалась), были надежными, то я могу считать надёжными другие системы
+* `co06` positive skewness
+  - Я могу судить о надёжности новой интеллектуальной системы по опыту работы с другими системами
+* `co07` high positive skewness
+  - Я могу сказать, что система работает корректно, только протестировав её (R)
+* `co08` positive skewness
+  - Если одна интеллектуальная система подводит меня, то и с другими будет то же самое
+* `co09`positive skewness
+  - Если одна интеллектуальная система соответствует моим ожиданиям, то с другими будет то же самое
+* `co10` positive skewness
+  - Я могу сформировать ожидания относительно работы интеллектуальных систем в целом на основе опыта взаимодействия с одной системой
+
+
 
 ```{r}
 taia %>% 
@@ -118,11 +194,85 @@ taia %>%
 ```
 
 ```{r}
+taia %>% select(all_of(ut_items)) %>% 
+  pivot_longer(cols = all_of(ut_items)) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "goldenrod3") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = 0:5) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Utility") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+* `ut01` extremely high negative skewness
+  - Я считаю, что интеллектуальные технологии — неотъемлемая часть развития общества
+* `ut02` high negative skewness
+  - Я считаю, что человечество нуждается в интеллектуальных системах
+* `ut03` high negative skewness
+  - Мне кажется, человечеству будет лучше без интеллектуальных систем (R)
+* `ut04` negative skewness
+  - Я считаю, что развитие интеллектуальных систем — это оправданный риск для общества
+* `ut05` OK
+  - По моему мнению, без интеллектуальных систем общественный прогресс остановился бы
+* `ut06` negative skewness
+  - Я считаю, что интеллектуальные системы существенно повышают качество медицинской диагностики
+* `ut07` light negative skewness
+  - Мне кажется, что оформить услуги с цифровыми помощниками гораздо проще, чем без них
+* `ut08` negative skewness
+  - Мне кажется, рекомендательные сервисы существенно сокращают время поиска нужной информации
+* `ut09` negative skewness
+  - Я считаю, что если полиция будет использовать интеллектуальные системы, то количество раскрытых преступлений увеличится
+* `ut10` positive skewness
+  - Мне кажется, при оформлении услуг через интернет можно справиться и без цифровых помощников (R)
+* `ut11` OK
+  - Я считаю, что если на дорогах появятся машины, управляемые искусственным интеллектом, то число аварий снизится
+* `ut12` negative skewness
+  - Я считаю, что использование интеллектуальных систем в обучении повышает качество образования
+
+
+
+```{r}
 taia %>% 
   select(all_of(fa_items)) %>% 
   describe() %>% 
   kable(caption = "Faith", label = 4, digits = 2, col.names = col_names)
 ```
+
+```{r}
+taia %>% select(all_of(fa_items)) %>% 
+  pivot_longer(cols = all_of(fa_items)) %>% 
+  ggplot(aes(value)) +
+  geom_bar(fill = "darkgreen") +
+  facet_wrap(~ name) +
+  scale_x_discrete(limits = 0:5) +
+  labs(x = "Score", y = "Number of observations",
+       title = "Faith") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+* `fa01` OK
+  - Я готов (готова) довериться интеллектуальным системам, даже если я не до конца понимаю, как они работают
+* `fa02` light positive skewness
+  - Чтобы доверять интеллектуальной системе, мне нужно точно понимать, как работают её алгоритмы (R)
+* `fa03` hard positive skewness
+  - Если интеллектуальная система перестает реагировать на запросы, мне с этим комфортно
+* `fa04` hard positive skewness
+  - Если интеллектуальная система управлениями финансами не реагирует на запросы, я все равно буду уверен, что она работает корректно
+* `fa05` OK
+  - Я готов (готова) доверять результатам работы интеллектуальных систем, даже если я не знаю, как они работают
+* `fa06` OK
+  - Я готов (готова) довериться работе интеллектуальных систем так же, как работе профессионалов
+* `fa07` OK
+  - Я предпочту сам (сама) контролировать весь процесс нежели дам контроль интеллектуальной системе (R)
+* `fa08` light positive skewness
+  - Мне нужно знать детали работы алгоритма, чтобы быть уверенным (уверенной) в качестве результата его работы (R)
+* `fa09` OK
+  - Если я не понимаю, как работает интеллектуальная система, я не могу быть уверенным (уверенной) в результате её работы (R)
+* `fa10` OK
+  - Мне не важно, как работает интеллектуальная система, если она должным образом справляется со своей задачей
+
+
 
 ```{r}
 taia %>% 
@@ -132,74 +282,47 @@ taia %>%
 ```
 
 ```{r}
-taia %>%
-  select(all_of(un_items)) %>% 
-  describe() %>% 
-  kable(caption = "Understanding", label = 6, digits = 2, col.names = col_names)
-```
-
-
-
-### TAIA scores distributions
-
-```{r}
-taia %>% select(all_of(pr_items)) %>% 
-  pivot_longer(cols = all_of(pr_items)) %>% 
-  ggplot(aes(value)) +
-  geom_bar(fill = "darkred") +
-  facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
-  labs(x = "Score", y = "Number of observations",
-       title = "Predictability") +
-  theme(plot.title = element_text(hjust = .5))
-```
-
-```{r}
-taia %>% select(all_of(co_items)) %>% 
-  pivot_longer(cols = all_of(co_items)) %>% 
-  ggplot(aes(value)) +
-  geom_bar(fill = "chocolate3") +
-  facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
-  labs(x = "Score", y = "Number of observations",
-       title = "Consistency") +
-  theme(plot.title = element_text(hjust = .5))
-```
-
-```{r}
-taia %>% select(all_of(ut_items)) %>% 
-  pivot_longer(cols = all_of(ut_items)) %>% 
-  ggplot(aes(value)) +
-  geom_bar(fill = "goldenrod3") +
-  facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
-  labs(x = "Score", y = "Number of observations",
-       title = "Utility") +
-  theme(plot.title = element_text(hjust = .5))
-```
-
-```{r}
-taia %>% select(all_of(fa_items)) %>% 
-  pivot_longer(cols = all_of(fa_items)) %>% 
-  ggplot(aes(value)) +
-  geom_bar(fill = "darkgreen") +
-  facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
-  labs(x = "Score", y = "Number of observations",
-       title = "Faith") +
-  theme(plot.title = element_text(hjust = .5))
-```
-
-```{r}
 taia %>% select(all_of(de_items)) %>% 
   pivot_longer(cols = all_of(de_items)) %>% 
   ggplot(aes(value)) +
   geom_bar(fill = "darkblue") +
   facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
+  scale_x_discrete(limits = 0:5) +
   labs(x = "Score", y = "Number of observations",
        title = "Dependability") +
   theme(plot.title = element_text(hjust = .5))
+```
+
+* `de01` negative skewness
+  - Я готов (готова) следовать рекомендациям рекомендательных систем социальных сетей
+* `de02` OK
+  - Я готов (готова) делегировать управление финансами интеллектуальному помощнику
+* `de03` OK
+  - Если интеллектуальная система запрашивает мои личные данные, я могу быть уверен (уверенна) в их сохранности
+* `de04` hard positive skewness
+  - Я могу доверять интеллектуальной системе, если я точно понимаю, какие опасности исходят от неё
+* `de05` hard negative skewness
+  - Я бы мог (могла) жить в «умном доме»
+* `de06` negative kurtosis
+  - Если бы я ехал (ехала) в автомобиле, управляемом искусственным интеллектом, я бы был спокоен за свою безопасность
+* `de07` OK
+  - Если меня обследуют с помощью интеллектуальных медицинских технологий, я могу доверять выставленному диагнозу
+* `de08` OK
+  - Я считаю, что при покупках с интеллектуальными помощниками риск ошибиться меньше, чем без них
+* `de09` negative skewness
+  - Мне было бы некомфортно жить в «умном доме» (R)
+* `de10` negative kurtosis
+  - Я могу доверить искусственному интеллекту задачи, от которых зависит моя личная безопасность
+* `de11` negative kurtosis
+  - Я могу доверить искусственному интеллекту только рутинные задачи (например, уборка) (R)
+
+
+
+```{r}
+taia %>%
+  select(all_of(un_items)) %>% 
+  describe() %>% 
+  kable(caption = "Understanding", label = 6, digits = 2, col.names = col_names)
 ```
 
 ```{r}
@@ -208,11 +331,37 @@ taia %>% select(all_of(un_items)) %>%
   ggplot(aes(value)) +
   geom_bar(fill = "purple4") +
   facet_wrap(~ name) +
-  scale_x_discrete(limits = factor(0:5)) +
+  scale_x_discrete(limits = 0:5) +
   labs(x = "Score", y = "Number of observations",
        title = "Understanding") +
   theme(plot.title = element_text(hjust = .5))
 ```
+
+* `un01` OK
+  - Я понимаю, как происходит взаимодействие человека с интеллектуальными системами
+* `un02` OK
+  - Я понимаю, как работают алгоритмы интеллектуальных систем
+* `un03` negative skewness
+  - Я стараюсь разобраться в том, как работают интеллектуальные системы
+* `un04` negative skewness
+  - Я понимаю, как работают отдельные элементы интеллектуальных систем
+* `un05` positive kurtosis
+  - Я понимаю общий принцип работы интеллектуальных систем
+* `un06` negative kurtosis
+  - Я плохо разбираюсь в тонкостях работы интеллектуальных систем (R)
+* `un07` negative kurtosis
+  - Мне понятно, как работают интеллектуальные алгоритмы, применяемые в медицинской диагностике
+* `un08` OK
+  - Мне понятно, как работают алгоритмы рекомендательных систем социальных сетей
+* `un09` extra negative kurtosis
+  - Я понимаю, как работают алгоритмы автомобилей, управляемых искусственным интеллектом
+* `un10` negative kurtosis
+  - Я понимаю, как работают алгоритмы интеллектуальных систем, которые управляют финансами
+* `un11` OK
+  - Мне понятно, как устроены алгоритмы машинного перевода текстов
+* `un12` OK
+  - Мне понятно, как работают алгоритмы систем типа «умный дом»
+
 
 
 
@@ -331,7 +480,7 @@ pr1$item.stats %>%
 ```{r}
 kable(pr1$alpha.drop,
       caption = "Predictability. Subscale statistics when item drop",
-      label = 9, digits = 2, col.names = alpha_drop)
+      label = 9, digits = 2, col.names = alpha_drop_colnames)
 ```
 
 
@@ -390,7 +539,7 @@ co1$item.stats %>%
 kable(co1$alpha.drop,
       caption = "Consistency. Subscale statistics when item drop",
       label = 13, digits = 2,
-      col.names = alpha_drop)
+      col.names = alpha_drop_colnames)
 ```
 
 ```{r}
@@ -447,7 +596,7 @@ ut1$item.stats %>%
 kable(ut1$alpha.drop,
       caption = "Utility. Subscale statistics when item drop",
       label = 17, digits = 2,
-      col.names = alpha_drop)
+      col.names = alpha_drop_colnames)
 ```
 
 ```{r}
@@ -504,7 +653,7 @@ fa1$item.stats %>%
 kable(fa1$alpha.drop,
       caption = "Faith. Subscale statistics when item drop",
       label = 21, digits = 2,
-      col.names = alpha_drop)
+      col.names = alpha_drop_colnames)
 ```
 
 ```{r}
@@ -561,7 +710,7 @@ de1$item.stats %>%
 kable(de1$alpha.drop,
       caption = "Dependability. Subscale statistics when item drop",
       label = 25, digits = 2,
-      col.names = alpha_drop)
+      col.names = alpha_drop_colnames)
 ```
 
 ```{r}
@@ -618,7 +767,7 @@ un1$item.stats %>%
 kable(un1$alpha.drop,
       caption = "Understanding. Subscale statistics when item drop",
       label = 29, digits = 2,
-      col.names = alpha_drop)
+      col.names = alpha_drop_colnames)
 ```
 
 ```{r}
@@ -627,9 +776,250 @@ kable(un1$response.freq,
       label = 30, digits = 2)
 ```
 
+```{r}
+omega(taia %>% ungroup() %>% select(all_of(taia_items)),
+      nfactors=6, p=.05, poly=FALSE,
+      digits=2, title="Omega", sl=TRUE, plot=TRUE, covar=FALSE)
+```
+
+
+```{r}
+splitHalf(taia %>% ungroup() %>% select(all_of(taia_items)),
+          raw=F, brute=F, n.sample=100, covar=F,
+          check.keys=F, key=NULL, use="pairwise")
+```
+
+```{r}
+guttman(taia %>% ungroup() %>% select(all_of(taia_items)))
+```
+
+```{r}
+glb.fa(taia %>% ungroup() %>% select(all_of(taia_items)))
+```
+
+
 
 
 ## Items exclusion
+
+### First step
+
+Excluded items: `co07`, `ut10`, `de04`
+
+Reason: negative discrimination
+
+```{r}
+co_items_old <- co_items
+co_items[-7] -> co_items
+```
+```{r}
+ut_items_old <- ut_items
+ut_items[-10] -> ut_items
+```
+
+```{r}
+de_items_old <- de_items
+de_items[-4] -> de_items
+```
+
+
+### Subscales after first step of exclusion
+
+#### Consistency
+
+```{r}
+co2 <- psych::alpha(
+  taia %>% select(all_of(co_items)),
+  cumulative = TRUE,
+  title = "Consistency Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(co2$total,
+      caption = "Consistency. Subscale statistics", 
+      label = 11, digits = 2,
+      col.names = total_colnames)
+```
+
+
+```{r}
+co2$item.stats$mean <- co2$item.stats$mean / 5
+kable(co2$item.stats,
+      caption = "Consistency. Items statistics",
+      label = 12, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+co2$item.stats %>%
+  ggplot(aes(x = row.names(co2$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Consistency. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(co2$alpha.drop,
+      caption = "Consistency. Subscale statistics when item drop",
+      label = 13, digits = 2,
+      col.names = alpha_drop_colnames)
+```
+
+```{r}
+kable(co2$response.freq,
+      caption = "Consistency. Non missing response frequency for each item",
+      label = 14, digits = 2)
+```
+
+
+
+#### Utility
+
+```{r}
+ut2 <- psych::alpha(
+  taia %>% select(all_of(ut_items)),
+  cumulative = TRUE,
+  title = "Utility Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(ut2$total,
+      caption = "Utility. Subscale statistics", 
+      label = 15, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+ut2$item.stats$mean <- ut2$item.stats$mean / 5
+kable(ut2$item.stats,
+      caption = "Utility. Items statistics",
+      label = 16, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+ut2$item.stats %>%
+  ggplot(aes(x = row.names(ut2$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Utility. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(ut2$alpha.drop,
+      caption = "Utility. Subscale statistics when item drop",
+      label = 17, digits = 2,
+      col.names = alpha_drop_colnames)
+```
+
+```{r}
+kable(ut2$response.freq,
+      caption = "Utility. Non missing response frequency for each item",
+      label = 18, digits = 2)
+```
+
+
+
+#### Dependability
+
+```{r}
+de2 <- psych::alpha(
+  taia %>% select(all_of(de_items)),
+  cumulative = TRUE,
+  title = "Dependability Factor",
+  check.keys = FALSE
+)
+```
+
+```{r}
+kable(de2$total,
+      caption = "Dependability. Subscale statistics", 
+      label = 23, digits = 2,
+      col.names = total_colnames)
+```
+
+```{r}
+de2$item.stats$mean <- de2$item.stats$mean / 5
+kable(de2$item.stats,
+      caption = "Dependability. Items statistics",
+      label = 24, digits = 2,
+      col.names = item_stats_colnames)
+```
+
+```{r}
+de2$item.stats %>%
+  ggplot(aes(x = row.names(de2$item.stats))) +
+  geom_point(aes(y = mean), color = "darkblue", size = 3) +
+  geom_point(aes(y = raw.r), color = "darkred", size = 2) +
+  geom_hline(yintercept = 0.1, color = "darkblue") +
+  geom_hline(yintercept = 0.9, color = "darkblue") +
+  geom_hline(yintercept = 0.25, color = "darkred") +
+  geom_hline(yintercept = 0, color = "black") +
+  labs(x = "Item", y = "Value",
+       title = "Dependability. Items characteristics",
+       subtitle = "Difficulty (blue) and Dicrimination (red)") +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5))
+```
+
+```{r}
+kable(de2$alpha.drop,
+      caption = "Dependability. Subscale statistics when item drop",
+      label = 25, digits = 2,
+      col.names = alpha_drop_colnames)
+```
+
+```{r}
+kable(de2$response.freq,
+      caption = "Dependability. Non missing response frequency for each item",
+      label = 26, digits = 2)
+```
+
+### Reliability measures
+
+```{r}
+omega(taia %>% ungroup() %>% select(all_of(taia_items)),
+      nfactors=6, p=.05, poly=FALSE,
+      digits=2, title="Omega", sl=TRUE, plot=TRUE, covar=FALSE)
+```
+
+
+```{r}
+splitHalf(taia %>% ungroup() %>% select(all_of(taia_items)),
+          raw=F, brute=F, n.sample=100, covar=F,
+          check.keys=F, key=NULL, use="pairwise")
+```
+
+```{r}
+guttman(taia %>% ungroup() %>% select(all_of(taia_items)))
+```
+
+```{r}
+glb.fa(taia %>% ungroup() %>% select(all_of(taia_items)))
+```
+
+
+
 
 
 
@@ -637,6 +1027,12 @@ kable(un1$response.freq,
 
 
 # Exploratory Factor Analysis
+
+```{r}
+taia_items <- c(
+  pr_items, co_items, ut_items, fa_items, de_items, un_items
+)
+```
 
 6 factors, varimax rotation
 
@@ -671,7 +1067,50 @@ loadings(efa_6f_pm)
 ```
 
 ```{r}
-kable(sort(efa_6f_pm$uniquenesses, decreasing = TRUE), col.names = "U")
+kable(
+  sort(efa_6f_pm$uniquenesses, decreasing = TRUE),
+  col.names = "U")
+```
+
+
+5 factors, varimax rotation
+
+```{r}
+efa_5f_vm <- factanal(taia %>% select(all_of(taia_items)),
+                   factors = 5,
+                   scores = "regression",
+                   rotation = "varimax")
+```
+
+```{r}
+loadings(efa_5f_vm)
+```
+
+```{r}
+kable(
+  sort(efa_5f_vm$uniquenesses, decreasing = TRUE),
+  col.names = "U"
+)
+```
+
+5 factors, promax rotation
+
+```{r}
+efa_5f_pm <- factanal(taia %>% select(all_of(taia_items)),
+                   factors = 5,
+                   scores = "regression",
+                   rotation = "promax")
+```
+
+```{r}
+loadings(efa_5f_pm)
+```
+
+```{r}
+kable(
+  sort(efa_5f_pm$uniquenesses, decreasing = TRUE),
+  col.names = "U"
+)
 ```
 
 
@@ -688,10 +1127,10 @@ Model:
 ```{r}
 mdl1 <- "
 PR =~ pr01 + pr02 + pr03 + pr04 + pr05 + pr06 + pr07 + pr08 + pr09 + pr10
-CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co07 + co08 + co09 + co10
-UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut10 + ut11 + ut12
+CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co08 + co09 + co10
+UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut11 + ut12
 FA =~ fa01 + fa02 + fa03 + fa04 + fa05 + fa06 + fa07 + fa08 + fa09 + fa10
-DE =~ de01 + de02 + de03 + de04 + de05 + de06 + de07 + de08 + de09 + de10 + de11
+DE =~ de01 + de02 + de03 + de05 + de06 + de07 + de08 + de09 + de10 + de11
 UN =~ un01 + un02 + un03 + un04 + un05 + un06 + un07 + un08 + un09 + un10 + un11 + un12
 "
 ```
@@ -702,15 +1141,40 @@ CFA model fitting:
 model1 <- cfa(mdl1, taia %>% select(all_of(taia_items)))
 ```
 
+```{r}
+summary(model1)
+```
+
 Fit measures:
 
 ```{r}
-kable(
-  tibble(`Model 1` = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
-               Value = round(
-                 fitmeasures(model1, c("chisq", "df", "pvalue", "gfi", "agfi", "cfi", "tli", "srmr", "rmsea")), 4)
+kable(tibble(
+  `Model 1` = c(
+    "Chi-Squared",
+    "DF",
+    "p",
+    "GFI",
+    "AGFI",
+    "CFI",
+    "TLI",
+    "SRMR",
+    "RMSEA"
+  ),
+  Value = round(fitmeasures(
+    model1,
+    c(
+      "chisq",
+      "df",
+      "pvalue",
+      "gfi",
+      "agfi",
+      "cfi",
+      "tli",
+      "srmr",
+      "rmsea"
     )
-)
+  ), 4)
+))
 ```
 
 
@@ -724,10 +1188,20 @@ Loadings:
 
 ```{r}
 kable(
-  smodel1 %>% 
-    filter(op == "=~") %>% 
-    mutate_at(vars(4:9), function(x) round(x, 3)),
-  col.names = c("Factor", "", "Item", "Loading", "SE", "z", "p", "CI lower bound", "CI upper bound")
+  smodel1 %>%
+    filter(op == "=~"),
+  col.names = c(
+    "Factor",
+    "",
+    "Item",
+    "Loading",
+    "SE",
+    "z",
+    "p",
+    "CI lower bound",
+    "CI upper bound"
+  ),
+  digits = 3
 )
 ```
 
@@ -737,9 +1211,9 @@ Covariances:
 ```{r}
 kable(
   smodel1 %>% 
-    filter(op == "~~" & lhs != rhs) %>% 
-    mutate_at(vars(4:9), function(x) round(x, 3)),
-  col.names = c("Factor", "", "Factor", "Covariance", "SE", "z", "p", "CI lower bound", "CI upper bound")
+    filter(op == "~~" & lhs != rhs),
+  col.names = c("Factor", "", "Factor", "Covariance", "SE", "z", "p", "CI lower bound", "CI upper bound"),
+  digits = 3
 )
 ```
 
@@ -749,10 +1223,10 @@ Residuals:
 ```{r}
 kable(
   smodel1 %>% 
-    filter(op == "~~" & lhs == rhs) %>% 
-    mutate_at(vars(4:9), function(x) round(x, 3)) %>% 
+    filter(op == "~~" & lhs == rhs)%>% 
     select(-(2:3)),
-  col.names = c("Item", "Residual", "SE", "z", "p", "CI lower bound", "CI upper bound")
+  col.names = c("Item", "Residual", "SE", "z", "p", "CI lower bound", "CI upper bound"),
+  digits = 3
 )
 ```
 
@@ -760,7 +1234,7 @@ kable(
 Visualization:
 
 
-```{r}
+```{r layout="l-screen-inset"}
 semPaths(model1, "std")
 ```
 
@@ -772,10 +1246,10 @@ Model:
 ```{r}
 mdl2 <- "
 PR =~ pr01 + pr02 + pr03 + pr04 + pr05 + pr06 + pr07 + pr08 + pr09 + pr10
-CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co07 + co08 + co09 + co10
-UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut10 + ut11 + ut12
+CO =~ co01 + co02 + co03 + co04 + co05 + co06 + co08 + co09 + co10
+UT =~ ut01 + ut02 + ut03 + ut04 + ut05 + ut06 + ut07 + ut08 + ut09 + ut11 + ut12
 FA =~ fa01 + fa02 + fa03 + fa04 + fa05 + fa06 + fa07 + fa08 + fa09 + fa10
-DE =~ de01 + de02 + de03 + de04 + de05 + de06 + de07 + de08 + de09 + de10 + de11
+DE =~ de01 + de02 + de03 + de05 + de06 + de07 + de08 + de09 + de10 + de11
 UN =~ un01 + un02 + un03 + un04 + un05 + un06 + un07 + un08 + un09 + un10 + un11 + un12
 DigTrust =~ PR + CO + UT + FA + DE + UN
 "
@@ -786,13 +1260,39 @@ model2 <- cfa(mdl2, taia %>% select(all_of(taia_items)))
 ```
 
 ```{r}
-kable(
-  tibble(`Model 2` = c("Chi-Squared", "DF", "p", "GFI", "AGFI", "CFI", "TLI", "SRMR", "RMSEA"),
-               Value = round(
-                 fitmeasures(model2, c("chisq", "df", "pvalue", "gfi", "agfi", "cfi", "tli", "srmr", "rmsea")), 4)
-    )
-)
+summary(model2)
 ```
+
+```{r}
+kable(tibble(
+  `Model 2` = c(
+    "Chi-Squared",
+    "DF",
+    "p",
+    "GFI",
+    "AGFI",
+    "CFI",
+    "TLI",
+    "SRMR",
+    "RMSEA"
+  ),
+  Value = round(fitmeasures(
+    model2,
+    c(
+      "chisq",
+      "df",
+      "pvalue",
+      "gfi",
+      "agfi",
+      "cfi",
+      "tli",
+      "srmr",
+      "rmsea"
+    )
+  ), 4)
+))
+```
+
 
 ```{r}
 semPaths(model2, "std")
@@ -800,12 +1300,426 @@ semPaths(model2, "std")
 
 
 
+
 # Validation
 
-## Data preparation
+## TAIA total score
+
+```{r}
+taia %>% 
+  select(id, all_of(taia_items)) %>% 
+  pivot_longer(all_of(taia_items),
+               names_to = "subscale",
+               values_to = "score") %>% 
+  mutate(subscale = str_remove_all(subscale, "[:digit:]{2}") %>% toupper()) %>% 
+  group_by(id, subscale) %>% 
+  summarise(total_score = sum(score)) %>% 
+  pivot_wider(id_cols = id,
+              names_from = subscale,
+              values_from = total_score) %>% 
+  full_join(taia) -> taia
+```
+
+```{r}
+clrs <-
+  c("darkred",
+    "chocolate3",
+    "goldenrod3",
+    "darkgreen",
+    "darkblue",
+    "purple4")
+```
+
+
+## Correlations with General Trust Scale
+
+```{r}
+taia %>% 
+  pivot_longer(cols = c("PR", "CO", "UT", "FA", "DE", "UN"),
+               names_to = "subscale",
+               values_to = "score") %>%
+  mutate(subscale = factor(subscale, levels = c("PR", "CO", "UT", "FA", "DE", "UN"))) -> taia_l
+```
+
+```{r}
+taia_l %>% 
+  ggplot(aes(score, gt_score, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  scale_color_manual(values = clrs) +
+  guides(color = FALSE) +
+  labs(x = "TAIA subscale total score",
+       y = "General Trust Scale total score",
+       title = "Corelations between General Trust and TAIA subscales") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+
+```{r}
+cor.test(taia$PR, taia$gt_score)
+```
+
+```{r}
+cor.test(taia$CO, taia$gt_score)
+```
+
+```{r}
+cor.test(taia$UT, taia$gt_score)
+```
+
+```{r}
+cor.test(taia$FA, taia$gt_score)
+```
+
+```{r}
+cor.test(taia$DE, taia$gt_score)
+```
+
+```{r}
+cor.test(taia$UN, taia$gt_score)
+```
+
+
+
+## Correlations with questions
+
+```{r}
+taia_l %>% 
+  ggplot(aes(score, n_dighelp, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Number of digital helpers",
+       title = "Correlation TAIA subscales with number of digital helpers") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$n_dighelp, method = "sp")
+```
+
+```{r}
+cor.test(taia$CO, taia$n_dighelp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UT, taia$n_dighelp, method = "sp")
+```
+
+```{r}
+cor.test(taia$FA, taia$n_dighelp, method = "sp")
+```
+
+```{r}
+cor.test(taia$DE, taia$n_dighelp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UN, taia$n_dighelp, method = "sp")
+```
+
+
+```{r}
+taia_l %>%
+  ggplot(aes(score, e_dighelp, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Estimate of dealing with digital helpers experience",
+       title = "Correlation TAIA subscales with expirience of dealing with digital helpers") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$e_dighelp)
+```
+
+```{r}
+cor.test(taia$CO, taia$e_dighelp)
+```
+
+```{r}
+cor.test(taia$UT, taia$e_dighelp)
+```
+
+```{r}
+cor.test(taia$FA, taia$e_dighelp)
+```
+
+```{r}
+cor.test(taia$DE, taia$e_dighelp)
+```
+
+```{r}
+cor.test(taia$UN, taia$e_dighelp)
+```
+
+
+```{r}
+taia_l %>% 
+  ggplot(aes(score, n_socnet, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Number of social networks and social media",
+       title = "Correlation TAIA subscales with number of social networks and social media") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$n_socnet, method = "sp")
+```
+
+```{r}
+cor.test(taia$CO, taia$n_socnet, method = "sp")
+```
+
+```{r}
+cor.test(taia$UT, taia$n_socnet, method = "sp")
+```
+
+```{r}
+cor.test(taia$FA, taia$n_socnet, method = "sp")
+```
+
+```{r}
+cor.test(taia$DE, taia$n_socnet, method = "sp")
+```
+
+```{r}
+cor.test(taia$UN, taia$n_socnet, method = "sp")
+```
+
+```{r}
+taia_l %>% 
+  ggplot(aes(score, f_socnet, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Frequency of social networks and social media use",
+       title = "Correlation TAIA subscales with frequency of social networks and social media use") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$f_socnet)
+```
+
+```{r}
+cor.test(taia$CO, taia$f_socnet)
+```
+
+```{r}
+cor.test(taia$UT, taia$f_socnet)
+```
+
+```{r}
+cor.test(taia$FA, taia$f_socnet)
+```
+
+```{r}
+cor.test(taia$DE, taia$f_socnet)
+```
+
+```{r}
+cor.test(taia$UN, taia$f_socnet)
+```
+
+
+
+```{r}
+taia_l %>% 
+  ggplot(aes(score, e_socnet, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Estimate of dealing with recommender systems experience",
+       title = "Correlation TAIA subscales with experience of dealing with recommender systems") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+
+```{r}
+cor.test(taia$PR, taia$e_socnet)
+```
+
+```{r}
+cor.test(taia$CO, taia$e_socnet)
+```
+
+```{r}
+cor.test(taia$UT, taia$e_socnet)
+```
+
+```{r}
+cor.test(taia$FA, taia$e_socnet)
+```
+
+```{r}
+cor.test(taia$DE, taia$e_socnet)
+```
+
+```{r}
+cor.test(taia$UN, taia$e_socnet)
+```
 
 
 
 
+
+### Self driving cars and education AI
+
+```{r}
+taia %>% 
+  mutate_at(vars(selfdrexp, selfdrsafe, eduaiexp),
+            function(x) ifelse(x < 0, NA, x)) -> taia
+```
+
+```{r}
+taia %>% 
+  pivot_longer(cols = c("PR", "CO", "UT", "FA", "DE", "UN"),
+               names_to = "subscale",
+               values_to = "score") %>% 
+  mutate(subscale = factor(subscale, levels = c("PR", "CO", "UT", "FA", "DE", "UN"))) %>% 
+  ggplot(aes(score, selfdrexp, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Estimate of selfdriving car experience",
+       title = "Correlation TAIA subscales with selfdriving car experience") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$selfdrexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$CO, taia$selfdrexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UT, taia$selfdrexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$FA, taia$selfdrexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$DE, taia$selfdrexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UN, taia$selfdrexp, method = "sp")
+```
+
+
+
+```{r}
+taia %>% 
+  pivot_longer(cols = c("PR", "CO", "UT", "FA", "DE", "UN"),
+               names_to = "subscale",
+               values_to = "score") %>% 
+  mutate(subscale = factor(subscale, levels = c("PR", "CO", "UT", "FA", "DE", "UN"))) %>% 
+  ggplot(aes(score, selfdrsafe, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Estimate of selfdriving car safe",
+       title = "Correlation TAIA subscales with selfdriving car safe") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+```{r}
+cor.test(taia$PR, taia$selfdrsafe, method = "sp")
+```
+
+```{r}
+cor.test(taia$CO, taia$selfdrsafe, method = "sp")
+```
+
+```{r}
+cor.test(taia$UT, taia$selfdrsafe, method = "sp")
+```
+
+```{r}
+cor.test(taia$FA, taia$selfdrsafe, method = "sp")
+```
+
+```{r}
+cor.test(taia$DE, taia$selfdrsafe, method = "sp")
+```
+
+```{r}
+cor.test(taia$UN, taia$selfdrsafe, method = "sp")
+```
+
+
+
+```{r}
+taia %>% 
+  pivot_longer(cols = c("PR", "CO", "UT", "FA", "DE", "UN"),
+               names_to = "subscale",
+               values_to = "score") %>% 
+  mutate(subscale = factor(subscale, levels = c("PR", "CO", "UT", "FA", "DE", "UN"))) %>% 
+  ggplot(aes(score, eduaiexp, color = subscale)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ subscale) +
+  guides(color = FALSE) +
+  scale_color_manual(values = clrs) +
+  labs(x = "TAIA subscales total score",
+       y = "Estimate of dealing with education AI experience",
+       title = "Correlation TAIA subscales with experience of dealing with education AI") +
+  theme(plot.title = element_text(hjust = .5))
+```
+
+
+```{r}
+cor.test(taia$PR, taia$eduaiexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$CO, taia$eduaiexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UT, taia$eduaiexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$FA, taia$eduaiexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$DE, taia$eduaiexp, method = "sp")
+```
+
+```{r}
+cor.test(taia$UN, taia$eduaiexp, method = "sp")
+```
 
 
