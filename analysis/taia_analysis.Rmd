@@ -1,19 +1,20 @@
 ---
 title: "Trust in Artificial Intelligent Agents Scale"
-description: |
-  First quantitative approbation. Data analysis workflow
+subtitle: "First quantitative approbation. Data analysis workflow"
 author:
-  - name: Anton Angelgardt 
-    url: https://www.hse.ru/en/staff/angelgardt
+  - name: Anton Angelgardt
     affiliation: HSE University
-    affiliation_url: https://www.hse.ru/en/
 date: "`r Sys.Date()`"
-output: radix::radix_article
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
 ```
+
 
 
 # Preprocess
@@ -1242,7 +1243,7 @@ kable(
 Visualization:
 
 
-```{r layout="l-screen-inset"}
+```{r}
 semPaths(model1, "std")
 ```
 
