@@ -1,14 +1,14 @@
 ---
 title: "Trust in Artificial Intelligent Agents Scale"
-description: |
-  First quantitative approbation. Data preprocess workflow
+subtitle: "First quantitative approbation. Data preprocess workflow"
 author:
   - name: Anton Angelgardt 
-    url: https://www.hse.ru/en/staff/angelgardt
     affiliation: HSE University
-    affiliation_url: https://www.hse.ru/en/
 date: "`r Sys.Date()`"
-output: radix::radix_article
+output: 
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
@@ -317,6 +317,11 @@ questions %>%
   full_join(taia) -> taia
 ```
 
+```{r}
+taia %>% 
+  mutate_at(vars(selfdrexp, selfdrsafe, eduaiexp),
+            function(x) ifelse(x < 0, NA, x)) -> taia
+```
 
 
 # Export data
