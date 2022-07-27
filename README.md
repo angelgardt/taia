@@ -1,3 +1,3 @@
 # taia
 
-Repo contains data and code for Trust in Artificial Intelligent Agents Scale development.
+Repo contains all stuff for Trust in Artificial Intelligent Agents Scale development.
