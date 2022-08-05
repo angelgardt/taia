@@ -75,3 +75,4 @@
 			* declines when positive expectations are disconfirmed
 
 #model
+#interpersonal_trust

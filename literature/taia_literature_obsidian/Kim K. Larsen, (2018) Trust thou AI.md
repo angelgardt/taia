@@ -20,9 +20,27 @@ Additionally, you believe you understand the automation principles
 “A large body of research shows us that the most important factors for establishing a trust bond between human and an automation function is; **reliability** (of automation), **consistency** (of automation), **robustness** (of automation), **dependability** (of human operator), **faith** (of human operator) and **understand-ability** (of human operator). *Much of which is fairly similar to what we require from another human being to be regarded as trustworthy*.”
 
 [[SurveyMonkey “Artificial Intelligence & Human Desicion Making Sentiment Survey” (November 2017)]] 467 responses
-![[Pasted image 20220714135331.png]]
-
-![[Pasted image 20220714135317.png]]
+* How do you feel about AI?
+	* 16% negative
+	* 36% neutral
+	* 48% positive
+	* 20% of respondents are enthusiastic about AI
+	* 15% are uncomfortable or scared about AI
+	* Millenials are significantly more negative towards AI
+* How do you feel about AI?
+	- Comparising 4 surveys from 2017  2018 and a total of 1623 respondents, 808 women and 815 men
+	* Women
+		* 31% negative
+		* 42% neutral
+		* 27% positive
+	* Men
+		* 21% negative
+		* 33% neutral
+		* 46% positive
+	* Men w. children
+		* 18% negative
+		* 29% neutral
+		* 53% negative
 
 **Aspects of trust**
 - the initial trust moment
@@ -61,3 +79,4 @@ _**An agent’s trust (the trustor) is an expectation about a future action of a
 
 
 #review 
+#trust_in_ai

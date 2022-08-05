@@ -2,3 +2,4 @@
 
 [[McKnight, Cummings, Chervany (1998) Initial trust formation in new organizational relationships]]
 
+#term 
